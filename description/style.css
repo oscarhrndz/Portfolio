@@ -1,0 +1,12 @@
+.line-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18%;
+  margin: 5px 0; /* Ajusta el margen para más o menos espacio entre las líneas */
+}
+
+.line {
+  border-top: 1px solid black;
+  width: 10px; /* Ancho de cada línea */
+}
