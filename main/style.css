@@ -1,0 +1,89 @@
+@font-face {
+    font-family: Ganasjuice;
+    src: url("GanasJuice.otf") format("opentype");
+}
+
+body {
+    background-color: #121212;
+    color: #FFF;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 5% 20% 5% 20%;
+}
+
+.sello {
+    position: absolute;
+    fill: currentColor;
+    height: auto;
+    max-width: 40vmin;
+    transform-origin: center;
+    width: 10%;
+    left: 100px;
+    right: 200px;
+    color: color-contrast(#121212 vs #FFF);
+}
+
+.port {
+    font-family: sans-serif;
+    font-size: 270px;
+    margin: 0px 0px 0px 10%;
+    padding: 0px 0px 100px 0px;
+    position: absolute;
+    text-align: center;
+    top: 0%;
+}
+
+.folio {
+    font-family: Ganasjuice;
+    font-size: 270px;
+    text-align: center;
+    margin: 0px 0px 0px 10%;
+    padding: 0px 0px 100px 0px;
+    position: absolute;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.atribute {
+    font-family: sans-serif;
+    font-size: 40px;
+    position: absolute;
+    text-align: center;
+    margin: 0px 0px 0px 11%;
+    padding: 0px 0px 100px 0px;
+    bottom: 25%;
+}
+
+.name {
+    font-family: Rockybilly;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    margin: 0px 0px 0px 40%;
+    padding: 0px 0px 100px 0px;
+    bottom: 12%;
+}
+
+.cornerRec1 {
+    position: absolute;
+    rotate: 270deg;
+    width: 70px;
+    height: 70px;
+    margin-left: 35%;
+    bottom: 17%;
+}
+
+.cornerRec2 {
+    position: absolute;
+    rotate: 90deg;
+    width: 70px;
+    height: 70px;
+    left: 0px;
+    top: 0px
+}
