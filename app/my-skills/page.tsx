@@ -9,8 +9,8 @@ import { Autoplay } from "swiper/modules";
 const Page = () => {
   return (
     <div
-      style={{ backgroundImage: "url(/bg-2.jpg)" }}
-      className="h-screen w-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundColor: "#000000" }} // Set background color to white
+      className="h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
     >
       <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
         <div className="flex flex-col items-center gap-4">
@@ -54,7 +54,7 @@ const Page = () => {
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
-            reverseDirection: true
+            reverseDirection: true,
           }}
           speed={5000}
           modules={[Autoplay]}

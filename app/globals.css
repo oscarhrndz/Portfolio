@@ -6,17 +6,16 @@ body {
   overflow: hidden; 
 }
 
-.flip-card-inner {
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+/* styles/globals.css */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  backface-visibility: hidden;
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
 }
 
-.flip-card-back {
-  transform: rotateY(180deg);
+.modal-overlay {
+  cursor: default; /* Prevents the pointer cursor on the overlay */
 }

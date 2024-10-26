@@ -78,35 +78,64 @@ export const SkillData = [
 
 export const Socials = [
   {
+    name: "Github",
+    src: "/github.svg",
+    link: "https://github.com/oscarhrndz/Portfolio",
+  },
+  {
+    name: "Telegram",
+    src: "/telegram.svg",
+    link: "https://github.com/oscarhrndz/Portfolio",
+  },
+  {
+    name: "LinkedIn",
+    src: "/linkedin.svg",
+    link: "https://github.com/oscarhrndz/Portfolio",
+  },
+  {
     name: "Discord",
-    src: "/instagram.svg",
-  },
-  {
-    name: "Facebook",
-    src: "/facebook.svg",
-  },
-  {
-    name: "Instagram",
     src: "/discord.svg",
+    link: "https://github.com/oscarhrndz/Portfolio",
+  },
+  {
+    name: "Email",
+    src: "/email-envelope.svg",
+    link: "mailto:your-oscarhernandezsoler@gmail.com?subject=Subject%20Here&body=Body%20Here",
   },
 ];
 export const Projects = [
   {
+    id: 1,
     title: "Modern Nextjs Website",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/NextWebsite.png",
+    src: "/showcase.png",
+    url: "mock"
   },
   {
+    id: 2,
     title: "Space Themed Website",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/SpaceWebsite.png",
+    src: "/screensho.jpg",
   },
   {
+    id: 3,
     title: "Modern Nextjs Portfolio",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/WebPortfolio.png",
   },
+  {id: 4,
+    title: "Matrix themed Website",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    src: "/Matrix.png",
+  },
   {
+    id: 5,
+    title: "Matrix themed Website",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    src: "/Matrix.png",
+  },
+  {
+    id: 6,
     title: "Matrix themed Website",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/Matrix.png",
@@ -134,4 +163,5 @@ export const NavLinks = [
     icon: RxClipboard,
     link: "/contact-me",
   },
+  
 ];

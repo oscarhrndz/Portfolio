@@ -1,37 +1,33 @@
-import React from 'react'
+import React from 'react';
 import Image from "next/image";
 import { Socials } from '@/constants';
 
 const Navbar = () => {
   return (
-    <div className='fixed top-0 z-[40] w-full h-[100px] bg-transparent flex justify-between items-center px-10 md:px-20'>
-        <div className='flex flex-row gap-3 items-center'>
-            <div className='relative'>
+    <div 
+    style={{ bottom: "80px", left: "50px", backgroundColor: "#1a1a1a" }}
+    className='fixed  z-[40] w-[70px] bg-[#1a1a1a] flex flex-col justify-center items-center gap-4 py-4 rounded-lg border border-white'> {/* Adjusted position, width, and flex-col for vertical layout */}
+      
+      <div className='flex flex-col items-center gap-3'> {/* Changed to flex-col for vertical icon alignment */}
+        {Socials.map((social) => (
+          <a key={social.name} href={social.link} target="_blank" rel="noopener noreferrer">
             <Image
-                src="/horseLogo.jpg"
-                alt="logo"
-                width={40}
-                height={40}
-                className="w-full h-full object-contain rounded-full"
+              src={social.src}
+              alt={social.name}
+              width={28}
+              height={28}
+              className="my-1" // Optional margin on images for additional space
             />
-            </div>
-            <h1 className='text-white text-[25px] font-semibold'>Oscar Portfolio</h1>
-        </div>
+          </a>
+        ))}
 
-        <div className='flex flex-row gap-5 mb-2'>
-            {Socials.map((social) => (
-                <Image
-                    key={social.name}
-                    src={social.src}
-                    alt={social.name}
-                    width={28}
-                    height={28}
-                />
-            ))}
-        </div>
-
+        {/* CV download link positioned below icons */}
+        <a href="/CV_Oscar_Hernandez.pdf" download className="text-white text-[14px] font-medium hover:underline border border-white rounded-full px-3 py-1 mt-4">
+          CV
+        </a>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
