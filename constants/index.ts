@@ -106,9 +106,9 @@ export const Socials = [
 export const Projects = [
   {
     id: 1,
-    title: "Modern Nextjs Website",
+    title: "Supermarket Online Shop",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/showcase.png",
+    src: "/showcase1.png",
     url: "mock"
   },
   {
@@ -158,10 +158,14 @@ export const NavLinks = [
     icon: RxDashboard,
     link: "/my-projects",
   },
+];
+
+export const CV = [
   {
-    name: "/contact-me",
-    icon: RxClipboard,
-    link: "/contact-me",
+    name: "CV",
+    icon: RxHome,
+    link: "/",
+    href: "/CV_Oscar_Hernandez.pdf"
   },
   
 ];

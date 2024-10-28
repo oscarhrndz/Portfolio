@@ -28,19 +28,31 @@ const Navigation = () => {
     }, [isRouting]);
 
     return (
-        <div 
-            style={{ top: "40px", left: "50px", backgroundColor: "#1a1a1a" }} // Set the background color
-            className='absolute z-[50] w-[70px] h-[200px] rounded-lg flex flex-col justify-center items-center border border-white'>
+        <div
+            className="fixed z-[50] rounded-lg flex flex-col justify-center items-center border border-white"
+            style={{
+                width: '5.1vw',     // Responsive width
+                height: '25vh',    // Responsive height
+                top: '8vh',        // Top position responsive to screen height
+                left: '3.6vw',       // Left position responsive to screen width
+                maxWidth: '6rem',  // Set a max-width for larger screens
+                maxHeight: '15rem', // Set a max-height for larger screens
+                backgroundColor: "#1a1a1a",
+                paddingTop: '3vh'
+            }}
+        >
             {isRouting && <Transition />}
             {NavLinks.map((nav) => (
                 <Link
                     key={nav.name}
                     href={nav.link}
-                    className='mb-4' // Increased margin for more space between icons
+                    className="mb-[1.5rem]" // Space between items
                 >
-                    <nav.icon className={`w-[24px] h-[24px] ${
-                        path === nav.link ? "text-purple-800" : "text-white"
-                    }`} />
+                    <nav.icon
+                        className={`w-[1.5rem] h-[1.5rem] ${
+                            path === nav.link ? "text-purple-800" : "text-white"
+                        }`}
+                    />
                 </Link>
             ))}
         </div>

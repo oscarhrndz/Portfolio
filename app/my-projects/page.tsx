@@ -7,7 +7,7 @@ import ProjectCard from '@/components/ProjectCard'; // Import the ProjectCard co
 const Page: React.FC = () => {
   return (
     <div className='w-screen h-screen flex items-center justify-center bg-black overflow-hidden'>
-      <div className='max-w-[100%] h-[100%] overflow-y-auto pt-10 pb-20 scrollbar-hidden'> {/* pt-40 for consistent top spacing */}
+      <div className='max-w-[100%] h-[100%] overflow-y-auto pt-14 pb-14 scrollbar-hidden'> {/* pt-40 for consistent top spacing */}
         {/* Flex container to hold the project cards */}
         <div className='flex flex-col gap-10'>
           {/* Iterate through Projects in pairs of two */}
