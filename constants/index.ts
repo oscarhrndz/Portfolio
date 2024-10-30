@@ -109,7 +109,7 @@ export const Projects = [
     description: "",
     tech: ['/dart.png','/figma.png'],
     figma_image: '/figma1.png',
-    mockups:["/mockup1.jpg","/mockup2.jpg","/mockup3.jpg","/mockup4.jpg"]
+    mockups:["/supermarket/mockup1.jpg","/supermarket/mockup2.jpg","/supermarket/mockup3.jpg"]
   },
   {
     id: 2,

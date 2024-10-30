@@ -17,8 +17,8 @@ const ProjPage = () => {
     <div className="min-h-screen bg-black flex flex-col justify-start items-center"> 
       {projectByUrl ? (
         <div 
-          className="w-full"
-          style={{ top: '8vh', overflowY: 'auto', maxHeight: 'calc(100vh - 8vh)' }} // Added overflowY and maxHeight
+          className="w-full overflow-y-scroll mt-0"
+          style={{  maxHeight: 'calc(105vh)'}} // Added overflowY and maxHeight
         >
           <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '8vh' }}>
             <img 
@@ -69,7 +69,7 @@ const ProjPage = () => {
           </div>
 
           {/* Smaller Card Below Figma and Description */}
-          <div className="mt-6 mx-auto w-full max-w-[75%]">
+          <div className="mt-6 mx-auto w-full mb-4 max-w-[75%]">
   <div className="text-gray-200 p-1 bg-[#1a1a1a] rounded-lg shadow-md"> {/* Further reduced padding */}
     {/* Tech Symbols Section */}
     <div className="mt-1 flex flex-wrap gap-1 justify-center"> {/* Reduced margin-top and gap */}
@@ -91,7 +91,7 @@ const ProjPage = () => {
 
           
           {/* Images Section */}
-<div className="mt-6 w-full max-w-[75%] mx-auto"> {/* Added mx-auto for centering */}
+<div className="mt-6 w-full mb-20 max-w-[75%] mx-auto"> {/* Added mx-auto for centering */}
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     {/* Mapping through mockup images */}
     {projectByUrl.mockups.map((mockup, index) => (

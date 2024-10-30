@@ -27,7 +27,7 @@ const Page: React.FC = () => {
                       figma_image={project.figma_image}
                       mockups={project.mockups}
                     />
-                    {Projects[index + 1] && (
+                    {Projects[index + 1] ? (
                       <ProjectCard 
                         title={Projects[index + 1].title}
                         text={Projects[index + 1].text}
@@ -38,6 +38,8 @@ const Page: React.FC = () => {
                         figma_image={Projects[index + 1].figma_image}
                         mockups={Projects[index + 1].mockups}
                       />
+                    ) : (
+                      <div style={{ marginLeft: '36vw'}} /> // Add an empty div to keep alignment when the number is odd
                     )}
                   </div>
                 );

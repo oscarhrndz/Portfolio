@@ -24,15 +24,6 @@ div {
   font-family: 'FuturaPTlight';
 }
 
-/* styles/globals.css */
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
-}
-
-.scrollbar-hidden {
-  -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
-  scrollbar-width: none;  /* Hide scrollbar for Firefox */
-}
 
 .modal-overlay {
   cursor: default; /* Prevents the pointer cursor on the overlay */
@@ -85,4 +76,16 @@ div {
 /* Optional: Scrollbar corner when scrolling both horizontally and vertically */
 ::-webkit-scrollbar-corner {
   background-color: #1a1a1a; /* Corner color */
+}
+
+
+/* Ensure custom background and text colors are preserved during autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-internal-autofill-selected {
+    -webkit-box-shadow: 0 0 0 30px #363636 inset !important; /* Keeps the background color */
+    box-shadow: 0 0 0 30px #363636 inset !important; /* Keeps the background color */
+    -webkit-text-fill-color: #ffffff !important; /* Ensures the text remains white */
+    caret-color: #ffffff; /* Keeps the cursor color consistent */
 }
