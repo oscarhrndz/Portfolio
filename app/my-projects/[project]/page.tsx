@@ -20,7 +20,7 @@ const ProjPage = () => {
           className="w-full" // Aumenta el margen a 3rem (48px) a los lados
           style={{ top: '8vh' }} // Modifica el margen superior aquí
         >
-          <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto border border-white"
+          <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto "
           style={{ marginTop: '8vh' }}>
             <img 
               src={projectByUrl.src} 

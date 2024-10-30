@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Spline from '@splinetool/react-spline/next';
+import { backIn } from "framer-motion";
 
 export default function Home() {
   const content = [
@@ -22,7 +24,7 @@ export default function Home() {
         height: '26vh', 
         marginRight: '0vw', 
         color: 'white', 
-        imgMarginTop: '16vh', 
+        imgMarginTop: '20vh', 
         imgMarginBottom: '0vh', 
         textMarginTop: '0vh', 
         textMarginBottom: '5.5vh'
@@ -35,7 +37,7 @@ export default function Home() {
         height: '20vh', 
         marginRight: '2vw', 
         color: 'white', 
-        imgMarginTop: '6vh', 
+        imgMarginTop: '2.5vh', 
         imgMarginBottom: '0vh', 
         textMarginTop: '0vh', 
         textMarginBottom: '6vh'
@@ -44,8 +46,8 @@ export default function Home() {
   ];
 
   return (
-    <main className="w-screen h-screen flex items-start bg-black p-8">
-      <div className="text-with-image extra-margin">
+    <main className="w-screen h-screen flex items-start bg-black p-8 relative">
+      <div className="text-with-image extra-margin z-10">
         {content.map((item, index) => (
           <div 
             key={index} 
@@ -77,57 +79,36 @@ export default function Home() {
         ))}
       </div>
 
-      {/* New section for "PORT" and "FOLIO" */}
       <div 
-        className="flex flex-col items-center ml-auto" 
-        style={{ position: 'relative', top: '1.5vh', marginLeft: 'auto', marginRight: '10vh' }} 
+        className="flex flex-col items-center ml-auto z-10" 
+        style={{ position: 'relative', top: '1.5vh', marginLeft: 'auto', marginRight: '0vh', height: '100%', width: '100%' }} 
       >
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          {/* "PORT" displayed horizontally */}
-          {['F', 'O', 'L', 'I', 'O'].map((letter, idx) => (
-            <h1 
-              key={idx}
+        <Spline
+              scene="https://prod.spline.design/VTKnHkCCdcmw5REa/scene.splinecode"
               style={{
-                color: 'white',
-                fontSize: '10rem',
-                marginRight: '3vw',
-                whiteSpace: 'nowrap',
-                marginTop: '62vh' // Adjust the vertical position
+                marginTop: '2vh',
+                height: '100%',
+                width: '85%',
+                position: 'absolute',
+                scale: '1.03',
+                left: '6.5vw'
               }}
-            >
-              {letter}
-            </h1>
-          ))}
-          
-          <img src="/mockup2.png" 
-          style={{
-              width: '65%',
-              margin: '0 0vw', // Adjust margin as needed
-              lineHeight: '1',
-              top: '0vh',
-              bottom: '30vh',
-              position: "absolute",
-              alignSelf: 'center'
-          }}/>
-            
-          {/* "FOLIO" displayed vertically */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {['P', 'O', 'R', 'T'].map((letter, idx) => (
-              <span 
-                key={idx} 
-                style={{
-                  color: idx === 3 ? '#553c9a' : 'white', // Make the "T" purple
-                  fontSize: '10rem',
-                  lineHeight: '1',
-                  textAlign: 'center'
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
+            />
+
+<div style={{
+        background: 'black',
+        height: '6vh',
+        width: '15vw',
+        position: 'absolute',
+        right: '3vw',
+        bottom: '-0.5vh'
+      }}
+      >
+
         </div>
+        
       </div>
+      
     </main>
   );
 }

@@ -22,6 +22,7 @@ const Page: React.FC = () => {
                     text={project.text}
                     src={project.src}
                     url={project.url}
+                    tech={project.tech}
                   />
                   {Projects[index + 1] && (
                     <ProjectCard 
@@ -29,6 +30,7 @@ const Page: React.FC = () => {
                       text={Projects[index + 1].text}
                       src={Projects[index + 1].src}
                       url={Projects[index +1].url}
+                      tech={Projects[index +1].tech}
                     />
                   )}
                 </div>

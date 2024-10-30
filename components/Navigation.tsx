@@ -32,7 +32,7 @@ const Navigation = () => {
             className="fixed z-[50] rounded-lg flex flex-col justify-center items-center border border-white"
             style={{
                 width: '5.1vw',     // Responsive width
-                height: '25vh',    // Responsive height
+                height: '32vh',    // Responsive height
                 top: '8vh',        // Top position responsive to screen height
                 left: '3.6vw',       // Left position responsive to screen width
                 maxWidth: '6rem',  // Set a max-width for larger screens

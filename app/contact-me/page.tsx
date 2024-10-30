@@ -3,11 +3,16 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="w-screen h-screen bg-black flex items-center justify-center">
-      <div className="h-[60%] w-[80%] relative bg-black rounded-xl border border-white">
-        <div className="absolute left-20 bottom-16 w-[70%] md:w-[30%]">
-          <ContactForm />
-        </div>
+    <div
+      className="w-screen h-screen flex items-center justify-center"
+      style={{
+        backgroundImage: 'url(/airplane.jpg)', // Use string directly if in public
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="h-[40%] w-[70%] rounded-xl flex items-center justify-center">
+        <ContactForm />
       </div>
     </div>
   );
