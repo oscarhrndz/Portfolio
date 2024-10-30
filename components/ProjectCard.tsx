@@ -8,13 +8,16 @@ export interface ProjectCardProps {
   src: string;
   url?: string;
   tech: string[]; // Add tech property for technology logos
+  figma_image: string;
+  mockups: string[];
+  description: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }) => {
   return (
     <Link href={`my-projects/${url}`}>
       <div
-        className='rounded-lg shadow-md overflow-hidden bg-white w-[800px] h-[65vh]'
+        className='rounded-lg shadow-md overflow-hidden bg-white w-[36vw] h-[65vh]'
         style={{
           backgroundColor: '#1a1a1a',
         }}

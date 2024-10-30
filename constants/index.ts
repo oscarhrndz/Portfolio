@@ -106,41 +106,59 @@ export const Projects = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/showcase1.png",
     url: "mock",
-    tech: ['dart.png','figma.png']
+    description: "",
+    tech: ['/dart.png','/figma.png'],
+    figma_image: '/figma1.png',
+    mockups:["/mockup1.jpg","/mockup2.jpg","/mockup3.jpg","/mockup4.jpg"]
   },
   {
     id: 2,
     title: "Space Themed Website",
     text: "Loremipsumdolorsitametconsecteturadipiscingeliteddoeiusmodtempoincididun utlabo reetdolore magna aliqua. Ut enim ad minim veniam.",
     src: "/screensho.jpg",
-    tech: ['dart.png','figma.png']
+    description: "",
+    tech: ['dart.png','figma.png'],
+    figma_image: '/figma1.png',
+    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
   },
   {
     id: 3,
     title: "Modern Nextjs Portfolio",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/WebPortfolio.png",
-    tech: ['dart.png','figma.png']
+    description: "",
+    tech: ['dart.png','figma.png'],
+    figma_image: 'figma1.png',
+    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
   },
   {id: 4,
     title: "Matrix themed Website",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/Matrix.png",
-    tech: ['dart.png','figma.png']
+    description: "",
+    tech: ['dart.png','figma.png'],
+    figma_image: 'figma1.png',
+    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
   },
   {
     id: 5,
     title: "Matrix themed Website",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/Matrix.png",
-    tech: ['dart.png','figma.png']
+    description: "",
+    tech: ['dart.png','figma.png'],
+    figma_image: 'figma1.png',
+    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
   },
   {
     id: 6,
     title: "Matrix themed Website",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
     src: "/Matrix.png",
-    tech: ['dart.png','figma.png', 'git.png']
+    description: "",
+    tech: ['dart.png','figma.png', 'git.png'],
+    figma_image: 'figma1.png',
+    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
   },
 ];
 

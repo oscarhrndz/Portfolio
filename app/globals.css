@@ -64,3 +64,25 @@ div {
 .mr-2 {
   margin-right: 0.5rem; /* Space between image and text */
 }
+
+/* Scrollbar container */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  background-color: #1a1a1a; /* Background color of the scrollbar track */
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+/* Hover effect on the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888; /* Darker shade when hovered */
+}
+
+/* Optional: Scrollbar corner when scrolling both horizontally and vertically */
+::-webkit-scrollbar-corner {
+  background-color: #1a1a1a; /* Corner color */
+}
