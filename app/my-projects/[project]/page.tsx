@@ -15,9 +15,9 @@ const ProjPage = () => {
   }, [params]);
 
   return (
-    <div className="h-full bg-black flex flex-col justify-start items-center"
+    <div className="h-full flex flex-col justify-start items-center"
     style={{
-      backgroundImage: 'url(/peakpx.jpg)', // Use string directly if in public
+      backgroundImage: 'url(/bg/bg_project.jpg)', // Use string directly if in public
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}> 
@@ -40,30 +40,45 @@ const ProjPage = () => {
             {projectByUrl.title}
           </h1>
           <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '3vh' }}>
-            <img 
-              src={projectByUrl.src} 
-              alt={projectByUrl.text} 
-              className="w-full h-[75vh] object-cover rounded-2xl"
-            />
-          </div>
+  <img 
+    src={projectByUrl.src} 
+    alt={projectByUrl.text} 
+    className="w-full h-[75vh] object-cover rounded-2xl"
+  />
+  
+  {/* GitHub Link with Logo */}
+  <a 
+    href="https://github.com/your-github-username" // Replace with your GitHub URL
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="absolute bottom-4 right-4"
+  >
+    <img 
+      src="/web-programming.png" // Replace with your GitHub logo path
+      alt="GitHub"
+      className="w-12 h-12" // Adjust size as needed
+    />
+  </a>
+</div>
+
           
 
           {/* Flexbox Container for Additional Content Below the Title */}
           <div className="flex justify-between mt-6 mx-auto max-w-[75%]">
             <div className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md mr-4">
-              <h2 className="text-xl font-bold mb-2">Description</h2>
-              <p>
+              <h2 className="text-xl font-bold mb-2 ml-3">Description</h2>
+              <p className="ml-3">
                 {projectByUrl.description}
               </p>
             </div>
 
             {/* Updated Figma Section with Logo and Image */}
             <div className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md">
-              <div className="flex items-center mb-2"> {/* Flex container for logo and title */}
+              <div className="flex items-center mb-2 "> {/* Flex container for logo and title */}
                 <img 
                   src="/figma.png" // Replace with your actual Figma logo path
                   alt="Figma Logo"
-                  className="w-5 h-5 mr-2" // Adjust size as needed
+                  className="w-5 h-5 mr-2 " // Adjust size as needed
                 />
                 <h2 className="text-xl font-bold">Figma</h2>
               </div>

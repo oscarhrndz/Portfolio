@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <div
     style={{
-      backgroundImage: 'url(/planescreen.jpg)', // Use string directly if in public
+      backgroundImage: 'url(/bg/bg_skills.jpg)', // Use string directly if in public
       backgroundSize: 'cover',
       backgroundPosition: '30% 70%',
     }} // Set background color to white

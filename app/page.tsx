@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <main className="w-screen h-screen flex items-start p-8 relative"
     style={{
-      backgroundImage: 'url(/planee.jpg)', // Use string directly if in public
+      backgroundImage: 'url(/bg/bg_home.jpg)', // Use string directly if in public
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}>

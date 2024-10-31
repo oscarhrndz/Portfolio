@@ -8,7 +8,7 @@ const Page: React.FC = () => {
   return (
     <div className='w-screen h-screen flex items-center justify-center'
     style={{
-      backgroundImage: 'url(/fotoplane.jpg)', // Use string directly if in public
+      backgroundImage: 'url(/bg/bg_my_projects.jpg)', // Use string directly if in public
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       paddingLeft: '2vw'

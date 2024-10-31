@@ -6,7 +6,7 @@ const Page = () => {
     <div
       className="w-screen h-screen flex items-center justify-center"
       style={{
-        backgroundImage: 'url(/airplane.jpg)', // Use string directly if in public
+        backgroundImage: 'url(/bg/bg_contact.jpg)', // Use string directly if in public
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

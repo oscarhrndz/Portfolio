@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
         <img src={src} alt={title} className="w-full h-[69%] object-cover" />
         
         {/* Container for the Title, Logos, and Description */}
-        <div className="p-4">
+        <div className="p-4 ml-1 mr-1">
           <div className="flex items-center justify-between mb-2">
             {/* Title */}
             <h3 className="text-xl font-semibold text-white">{title}</h3>

@@ -103,8 +103,8 @@ export const Projects = [
   {
     id: 1,
     title: "Supermarket Online Shop",
-    text: "Explore a vibrant supermarket designed with bold, contrasting colors for a fresh and dynamic shopping experience. Find everything you need easily, from daily essentials to unique finds, all set in a lively, customer-friendly space",
-    src: "/showcase1.png",
+    text: "Explore a vibrant supermarket designed with bold, contrasting colors for a fresh and dynamic shopping experience.",
+    src: "/supermarket/bg.png",
     url: "mock",
     description: "",
     tech: ['/java.png','/firebase.png','/android.png'],

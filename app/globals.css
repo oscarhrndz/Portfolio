@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'FuturaPTlight';
-  src: url('/fonts/FuturaCyrillicLight.ttf') format('sans-serif'),;
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Tomatoes';
   src: url('/fonts/Tomatoes-O8L8.ttf') format('sans-serif');
   font-weight: normal;
@@ -17,7 +11,7 @@
 
 body {
   overflow: hidden; 
-  font-family: 'FuturaPTlight', sans-serif;
+  
 }
 
 div {
