@@ -5,7 +5,7 @@ import { Socials } from '@/constants';
 const Navbar = () => {
   return (
     <div 
-      className="fixed z-[50] flex flex-col justify-center items-center gap-4 py-6 rounded-lg border border-white"
+      className="fixed z-[50] flex flex-col justify-center items-center gap-4 py-6 rounded-lg"
       style={{
         width: '5.1vw',
         maxWidth: '6rem',

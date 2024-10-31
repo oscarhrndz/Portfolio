@@ -46,8 +46,13 @@ export default function Home() {
   ];
 
   return (
-    <main className="w-screen h-screen flex items-start bg-black p-8 relative">
-      <div className="text-with-image extra-margin z-10">
+    <main className="w-screen h-screen flex items-start p-8 relative"
+    style={{
+      backgroundImage: 'url(/planee.jpg)', // Use string directly if in public
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
+      <div className="text-with-image extra-margin z-10 ">
         {content.map((item, index) => (
           <div 
             key={index} 
@@ -84,14 +89,14 @@ export default function Home() {
         style={{ position: 'relative', top: '1.5vh', marginLeft: 'auto', marginRight: '0vh', height: '100%', width: '100%' }} 
       >
         <Spline
-              scene="https://prod.spline.design/VTKnHkCCdcmw5REa/scene.splinecode"
+              scene="https://prod.spline.design/CfOZ1jFgB6lKaC4a/scene.splinecode"
               style={{
                 marginTop: '2vh',
                 height: '100%',
-                width: '85%',
+                width: '90%',
                 position: 'absolute',
                 scale: '1.03',
-                left: '6.5vw'
+                left: '10vw'
               }}
             />
 
@@ -100,7 +105,7 @@ export default function Home() {
         height: '6vh',
         width: '15vw',
         position: 'absolute',
-        right: '3vw',
+        right: '-2vw',
         bottom: '-0.5vh'
       }}
       >

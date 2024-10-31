@@ -9,7 +9,11 @@ import { Autoplay } from "swiper/modules";
 const Page = () => {
   return (
     <div
-      style={{ backgroundColor: "#000000" }} // Set background color to white
+    style={{
+      backgroundImage: 'url(/planescreen.jpg)', // Use string directly if in public
+      backgroundSize: 'cover',
+      backgroundPosition: '30% 70%',
+    }} // Set background color to white
       className="h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
     >
       <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
@@ -22,7 +26,7 @@ const Page = () => {
             </span>
             Technologies
           </h1>
-          <p className="text-gray-400 text-[20px]">
+          <p className="text-gray-800 text-[20px]">
             Using the latest tech this world has to offer
           </p>
         </div>

@@ -29,7 +29,7 @@ const Navigation = () => {
 
     return (
         <div
-            className="fixed z-[50] rounded-lg flex flex-col justify-center items-center border border-white"
+            className="fixed z-[50] rounded-lg flex flex-col justify-center items-center "
             style={{
                 width: '5.1vw',     // Responsive width
                 height: '32vh',    // Responsive height

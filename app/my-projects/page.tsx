@@ -6,7 +6,13 @@ import ProjectCard from '@/components/ProjectCard';
 
 const Page: React.FC = () => {
   return (
-    <div className='w-screen h-screen flex items-center justify-center bg-black'>
+    <div className='w-screen h-screen flex items-center justify-center'
+    style={{
+      backgroundImage: 'url(/fotoplane.jpg)', // Use string directly if in public
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      paddingLeft: '2vw'
+    }}>
       {/* Full-width, scrollable container */}
       <div className='w-full h-full overflow-y-auto'> 
         {/* Inner content container for project cards */}

@@ -17,33 +17,39 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
   return (
     <Link href={`my-projects/${url}`}>
       <div
-        className='rounded-lg shadow-md overflow-hidden bg-white w-[36vw] h-[65vh]'
+        className="rounded-lg shadow-md overflow-hidden bg-white w-[36vw] h-[65vh]"
         style={{
           backgroundColor: '#1a1a1a',
         }}
       >
-        <img src={src} alt={title} className='w-full h-[69%] object-cover' />
-        <div className='p-4 flex items-center justify-between'> {/* Flex container for title and tech logos */}
-          <div className='flex-1'> {/* This will take the remaining space */}
-            <h3 className='text-xl font-semibold text-white mb-2' >{title}</h3>
+        <img src={src} alt={title} className="w-full h-[69%] object-cover" />
+        
+        {/* Container for the Title, Logos, and Description */}
+        <div className="p-4">
+          <div className="flex items-center justify-between mb-2">
+            {/* Title */}
+            <h3 className="text-xl font-semibold text-white">{title}</h3>
             
-            <p className='text-gray-400 mb-4' >{text}</p>
+            {/* Tech Logos */}
+            <div className="flex space-x-2">
+              {tech.map((logo, index) => (
+                <img 
+                  key={index} 
+                  src={logo} 
+                  alt="Tech logo" 
+                  className="h-7 w-7" 
+                />
+              ))}
+            </div>
           </div>
-          <div className='flex gap-2 items-start'> {/* Align tech logos vertically at the top */}
-          {tech.map((logo, index) => (
-              <img 
-                key={index} 
-                src={logo} 
-                alt="Tech logo" 
-                className='h-18 w-8'
-                style={{ marginBottom: '13vh'}} // Adjust logo size and use negative margin to move them up
-              />
-            ))}
-          </div>
+
+          {/* Description Text */}
+          <p className="text-gray-400">{text}</p>
         </div>
       </div>
     </Link>
   );
 };
+
 
 export default ProjectCard;

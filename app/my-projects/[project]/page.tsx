@@ -4,6 +4,7 @@ import { Projects } from "@/constants";
 import { usePathname } from "next/navigation";
 import { ProjectCardProps } from '@/components/ProjectCard';
 
+
 const ProjPage = () => {
   const params = usePathname().split('/')[2];
   const [projectByUrl, setProject] = useState<ProjectCardProps | undefined>(undefined);
@@ -14,32 +15,38 @@ const ProjPage = () => {
   }, [params]);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col justify-start items-center"> 
+    <div className="h-full bg-black flex flex-col justify-start items-center"
+    style={{
+      backgroundImage: 'url(/peakpx.jpg)', // Use string directly if in public
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}> 
       {projectByUrl ? (
         <div 
-          className="w-full overflow-y-scroll mt-0"
+          className="w-full overflow-y-scroll mx-20"
           style={{  maxHeight: 'calc(105vh)'}} // Added overflowY and maxHeight
         >
-          <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '8vh' }}>
+          <h1
+            className="text-2xl font-bold text-center mt-8 mx-auto p-2 rounded-lg shadow-md"
+            style={{
+              backgroundColor: '#1a1a1a',
+              color: 'white',
+              width: '75%', // Full width
+              maxWidth: '94%',
+              margin: '0 auto',     
+              marginTop: '8vh'
+            }}
+          >
+            {projectByUrl.title}
+          </h1>
+          <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '3vh' }}>
             <img 
               src={projectByUrl.src} 
               alt={projectByUrl.text} 
               className="w-full h-[75vh] object-cover rounded-2xl"
             />
           </div>
-          <h1
-            className="text-2xl font-bold text-center mt-4 mx-auto p-2 rounded-lg shadow-md"
-            style={{
-              backgroundColor: '#1a1a1a',
-              color: 'white',
-              width: '75%', // Full width
-              maxWidth: '94%',
-              margin: '0 auto',
-              marginTop: '1.2%'
-            }}
-          >
-            {projectByUrl.title}
-          </h1>
+          
 
           {/* Flexbox Container for Additional Content Below the Title */}
           <div className="flex justify-between mt-6 mx-auto max-w-[75%]">
@@ -99,7 +106,7 @@ const ProjPage = () => {
         <img
           src={mockup} // Assuming mockup contains the image path
           alt={`Mockup ${index + 1}`}
-          className="w-full h-auto rounded-lg max-w-[90%]" // Set a max-width for images
+          className="w-full h-auto rounded-lg max-w-[80%]" // Set a max-width for images
         />
       </div>
     ))}

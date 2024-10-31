@@ -103,63 +103,26 @@ export const Projects = [
   {
     id: 1,
     title: "Supermarket Online Shop",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    text: "Explore a vibrant supermarket designed with bold, contrasting colors for a fresh and dynamic shopping experience. Find everything you need easily, from daily essentials to unique finds, all set in a lively, customer-friendly space",
     src: "/showcase1.png",
     url: "mock",
     description: "",
-    tech: ['/dart.png','/figma.png'],
+    tech: ['/java.png','/firebase.png','/android.png'],
     figma_image: '/figma1.png',
-    mockups:["/supermarket/mockup1.jpg","/supermarket/mockup2.jpg","/supermarket/mockup3.jpg"]
+    mockups:["/supermarket/mockup1.png","/supermarket/mockup2.png","/supermarket/mockup3.png"]
   },
   {
     id: 2,
-    title: "Space Themed Website",
-    text: "Loremipsumdolorsitametconsecteturadipiscingeliteddoeiusmodtempoincididun utlabo reetdolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/screensho.jpg",
+    title: "Rental Car",
+    text: "Discover a seamless rental car experience with a modern and minimalist design. My fleet blends style and functionality, offering top-tier vehicles that cater to your journey with simplicity and elegance.",
+    src: "/rentalcar/showcase.png",
+    url: "rental_car",
     description: "",
-    tech: ['dart.png','figma.png'],
+    tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
     figma_image: '/figma1.png',
-    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
+    mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"]
   },
-  {
-    id: 3,
-    title: "Modern Nextjs Portfolio",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/WebPortfolio.png",
-    description: "",
-    tech: ['dart.png','figma.png'],
-    figma_image: 'figma1.png',
-    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
-  },
-  {id: 4,
-    title: "Matrix themed Website",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/Matrix.png",
-    description: "",
-    tech: ['dart.png','figma.png'],
-    figma_image: 'figma1.png',
-    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
-  },
-  {
-    id: 5,
-    title: "Matrix themed Website",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/Matrix.png",
-    description: "",
-    tech: ['dart.png','figma.png'],
-    figma_image: 'figma1.png',
-    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
-  },
-  {
-    id: 6,
-    title: "Matrix themed Website",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-    src: "/Matrix.png",
-    description: "",
-    tech: ['dart.png','figma.png', 'git.png'],
-    figma_image: 'figma1.png',
-    mockups:["/mockup1.png","/mockup2.png","/mockup3.png"]
-  },
+  
 ];
 
 export const NavLinks = [
