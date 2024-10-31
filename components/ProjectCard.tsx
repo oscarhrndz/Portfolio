@@ -11,6 +11,7 @@ export interface ProjectCardProps {
   figma_image: string;
   mockups: string[];
   description: string;
+  github_link: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }) => {

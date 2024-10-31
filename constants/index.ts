@@ -109,7 +109,8 @@ export const Projects = [
     description: "",
     tech: ['/java.png','/firebase.png','/android.png'],
     figma_image: '/figma1.png',
-    mockups:["/supermarket/mockup1.png","/supermarket/mockup2.png","/supermarket/mockup3.png"]
+    mockups:["/supermarket/mockup1.png","/supermarket/mockup2.png","/supermarket/mockup3.png"],
+    github_link: 'https://github.com/oscarhrndz/Supermarket_Online_Shop'
   },
   {
     id: 2,
@@ -120,7 +121,8 @@ export const Projects = [
     description: "",
     tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
     figma_image: '/figma1.png',
-    mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"]
+    mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
+    github_link: 'https://github.com/oscarhrndz/rental_car'
   },
   
 ];
