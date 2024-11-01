@@ -109,7 +109,7 @@ export const Projects = [
     description: "",
     tech: ['/java.png','/firebase.png','/android.png'],
     figma_image: '/supermarket/figma.png',
-    figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Untitled?node-id=0-1&node-type=canvas&t=P8wTaWA7MWxdpSwF-0',
+    figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=0-1',
     mockups:["/supermarket/mockup1.png","/supermarket/mockup2.png","/supermarket/mockup3.png"],
     github_link: 'https://github.com/oscarhrndz/Supermarket_Online_Shop'
   },
