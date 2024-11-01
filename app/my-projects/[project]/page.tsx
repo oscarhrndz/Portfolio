@@ -46,7 +46,7 @@ const ProjPage = () => {
               className="absolute right-5 mt-1 flex items-center"
             >
               {/* Text next to GitHub Icon */}
-              <span className="static-text mr-4 text-sm text-white">Repository</span>
+              <span className="static-text mr-3 text-sm mt-1 text-white">Code</span>
               <img 
                 src="/github.svg" // Replace with your GitHub logo path
                 alt="GitHub"
@@ -71,21 +71,27 @@ const ProjPage = () => {
               </p>
             </div>
 
-            <div className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md">
-              <div className="flex items-center mb-2">
-                <img 
-                  src="/figma.png" // Replace with your actual Figma logo path
-                  alt="Figma Logo"
-                  className="w-5 h-5 mr-2"
-                />
-                <h2 className="text-xl font-bold">Figma</h2>
-              </div>
-              <img 
-                src={projectByUrl.figma_image} // Replace with your actual image path
-                alt="Figma Design"
-                className="w-full h-auto rounded-lg mt-2"
-              />
-            </div>
+            <a 
+  href={projectByUrl.figma_url} // Replace with the actual URL
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block"
+>
+  <div className="flex items-center mb-2">
+    <img 
+      src="/figma.png" // Replace with your actual Figma logo path
+      alt="Figma Logo"
+      className="w-5 h-5 mr-2"
+    />
+    <h2 className="text-xl font-bold">Figma</h2>
+  </div>
+  <img 
+    src={projectByUrl.figma_image} // Replace with your actual image path
+    alt="Figma Design"
+    className="w-full h-auto rounded-lg mt-2"
+  />
+</a>
+
           </div>
 
           <div className="mt-6 mx-auto w-full mb-4 max-w-[75%]">
