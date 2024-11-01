@@ -93,7 +93,7 @@ export default function Home() {
               style={{
                 marginTop: '2vh',
                 height: '100%',
-                width: '90%',
+                width: '100%',
                 position: 'absolute',
                 scale: '1.03',
                 left: '10vw'

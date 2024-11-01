@@ -37,81 +37,84 @@ const ProjPage = () => {
             }}
           >
             <h1 className='pl-3 text-2xl'>{projectByUrl.title}</h1>
-            
-            {/* GitHub Link with Text and Logo */}
-            <a 
-              href={projectByUrl.github_link} // Replace with your GitHub URL
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="absolute right-5 mt-1 flex items-center"
-            >
-              {/* Text next to GitHub Icon */}
-              <span className="static-text mr-3 text-sm mt-1 text-white">Code</span>
-              <img 
-                src="/github.svg" // Replace with your GitHub logo path
-                alt="GitHub"
-                className="w-7 h-7" // Adjust size as needed
-              />
-            </a>
           </div>
           
+          {/* Main Project Image with Responsive Sizing */}
           <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '3vh' }}>
             <img 
               src={projectByUrl.src} 
               alt={projectByUrl.text} 
-              className="w-full h-[75vh] object-cover rounded-2xl"
+              className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] object-cover rounded-2xl"
             />
           </div>
 
-          <div className="flex justify-between mt-6 mx-auto max-w-[75%]">
-            <div className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md mr-4">
-              <h2 className="text-xl font-bold mb-2 ml-3">Description</h2>
-              <p className="ml-3">
-                {projectByUrl.description}
-              </p>
+          {/* Container for Description, Technologies, GitHub, and Figma cards */}
+          <div className="flex flex-col lg:flex-row justify-between mt-6 mx-auto max-w-[75%] gap-4">
+            {/* Left Column with Description and Technologies Cards */}
+            <div className="flex-1 flex flex-col gap-4">
+              {/* Description Card */}
+              <div className="p-5 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex-grow">
+                <h2 className="text-xl font-bold mb-2">Description</h2>
+                <p>{projectByUrl.description}</p>
+              </div>
+
+              {/* Technologies Card */}
+              <div className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200">
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {projectByUrl?.tech?.map((logo, index) => (
+                    <img 
+                      key={index} 
+                      src={logo} 
+                      alt="Tech logo" 
+                      className='h-7 w-7'  // Adjusted size for the smaller card
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* GitHub Card */}
+              <a 
+                href={projectByUrl.github_link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center"
+              >
+                <div className="flex items-center">
+                  <img 
+                    src="/github.svg" // Replace with your GitHub logo path
+                    alt="GitHub"
+                    className="w-8 h-8 mr-3" 
+                  />
+                  <span className="text-lg font-bold">View Code</span>
+                </div>
+              </a>
             </div>
 
+            {/* Figma Card */}
             <a 
-  href={projectByUrl.figma_url} // Replace with the actual URL
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block"
->
-  <div className="flex items-center mb-2">
-    <img 
-      src="/figma.png" // Replace with your actual Figma logo path
-      alt="Figma Logo"
-      className="w-5 h-5 mr-2"
-    />
-    <h2 className="text-xl font-bold">Figma</h2>
-  </div>
-  <img 
-    src={projectByUrl.figma_image} // Replace with your actual image path
-    alt="Figma Design"
-    className="w-full h-auto rounded-lg mt-2"
-  />
-</a>
-
+              href={projectByUrl.figma_url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block h-full md:mt-4 lg:mt-0"
+            >
+              <div className="flex items-center mb-2">
+                <img 
+                  src="/figma.png" 
+                  alt="Figma Logo"
+                  className="w-5 h-5 mr-2"
+                />
+                <h2 className="text-xl font-bold">Figma</h2>
+              </div>
+              <img 
+                src={projectByUrl.figma_image} 
+                alt="Figma Design"
+                className="w-full h-auto rounded-lg mt-2 object-cover"
+              />
+            </a>
           </div>
 
           <div className="mt-6 mx-auto w-full mb-4 max-w-[75%]">
-            <div className="text-gray-200 p-1 bg-[#1a1a1a] rounded-lg shadow-md">
-              <div className="mt-1 flex flex-wrap gap-1 justify-center">
-                {projectByUrl?.tech?.map((logo, index) => (
-                  <img 
-                    key={index} 
-                    src={logo} 
-                    alt="Tech logo" 
-                    className='h-8 w-8'  
-                    style={{ marginBottom: '1vh' }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 w-full mb-20 max-w-[75%] mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
               {projectByUrl.mockups.map((mockup, index) => (
                 <div key={index} className="flex justify-center">
                   <img
