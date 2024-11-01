@@ -103,7 +103,7 @@ export const Projects = [
   {
     id: 1,
     title: "Supermarket Online Shop",
-    text: "Explore a vibrant supermarket designed with bold, contrasting colors for a fresh and dynamic shopping experience.",
+    text: "A simple but efective Supermarket Application for ordering differents products.",
     src: "/supermarket/bg.png",
     url: "mock",
     description: "",
@@ -116,13 +116,13 @@ export const Projects = [
   {
     id: 2,
     title: "Rental Car",
-    text: "Discover a seamless rental car experience with a modern and minimalist design. My fleet blends style and functionality, offering top-tier vehicles that cater to your journey with simplicity and elegance.",
+    text: "Modern and minimalist Renting Car Application. Differents cars, users and places can be chosen.",
     src: "/rentalcar/showcase.png",
     url: "rental_car",
     description: "",
     tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
-    figma_image: '/figma1.png',
-    figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Untitled?node-id=0-1&node-type=canvas&t=P8wTaWA7MWxdpSwF-0',
+    figma_image: '/rentalcar/figma.png',
+    figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=16-2',
     mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
     github_link: 'https://github.com/oscarhrndz/rental_car'
   },

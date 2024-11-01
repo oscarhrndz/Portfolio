@@ -117,7 +117,7 @@ const ProjPage = () => {
                   <img
                     src={mockup}
                     alt={`Mockup ${index + 1}`}
-                    className="w-full h-auto rounded-lg max-w-[80%]"
+                    className="w-full h-auto rounded-lg max-w-[80%] pb-6"
                   />
                 </div>
               ))}
