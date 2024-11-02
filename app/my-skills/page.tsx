@@ -1,33 +1,33 @@
-"use client"; // Ensure this component is rendered on the client side
+"use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { SkillData } from "@/constants"; // Import your skill data from constants
+import { SkillData } from "@/constants";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
 const Page = () => {
   return (
     <div
-      style={{
-        backgroundImage: 'url(/bg/bg_skills.jpg)', // Background image
-        backgroundSize: 'cover',
-        backgroundPosition: '30% 70%',
-      }}
-      className="h-screen w-screen flex flex-col items-center justify-center"
+    style={{
+      backgroundImage: 'url(/bg/bg_skills.jpg)', // Use string directly if in public
+      backgroundSize: 'cover',
+      backgroundPosition: '30% 70%',
+    }} // Set background color to white
+      className="h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
     >
       <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
         <div className="flex flex-col items-center gap-4 pt-5">
           <h1 className="font-semibold text-white text-[50px]">
             Skills{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
+              {" "}
               &{" "}
             </span>
             Technologies
           </h1>
+          
         </div>
-        
-        {/* Swiper for skills */}
         <Swiper
           slidesPerView={5}
           loop={true}
@@ -50,8 +50,6 @@ const Page = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Reverse direction Swiper for skills */}
         <Swiper
           slidesPerView={5}
           loop={true}

@@ -1,7 +1,6 @@
 import Image from "next/image"; // Import Image from Next.js
 import Spline from '@splinetool/react-spline/next';
-import Link from 'next/link'; // For linking to CV download
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'; // Importing social icons
+
 
 export default function Home() {
   const content = [
@@ -108,14 +107,12 @@ export default function Home() {
           height: '6vh',
           width: '15vw',
           position: 'absolute',
-          right: '-3vw',
+          right: '-2vw',
           bottom: '-0.5vh'
         }}>
         </div>
         
         
-        
-      
         
       </div>
     </main>
