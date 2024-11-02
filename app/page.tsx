@@ -1,5 +1,7 @@
 import Image from "next/image"; // Import Image from Next.js
 import Spline from '@splinetool/react-spline/next';
+import Link from 'next/link'; // For linking to CV download
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'; // Importing social icons
 
 export default function Home() {
   const content = [
@@ -47,7 +49,7 @@ export default function Home() {
   return (
     <main className="w-screen h-screen flex items-start p-8 relative"
       style={{
-        backgroundImage: 'url(/bg/bg_home.jpg)', // Use string directly if in public
+        backgroundImage: 'url(/bg/bg_home.jpg)', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
@@ -65,8 +67,8 @@ export default function Home() {
               <Image
                 src={item.img}
                 alt="Decorative Shape"
-                height={parseInt(item.style.height)} // Convert height from 'vh' to pixels if necessary
-                width={parseInt(item.style.height)} // Use the same value for width or adjust accordingly
+                height={parseInt(item.style.height)} 
+                width={parseInt(item.style.height)} 
                 style={{ marginRight: item.style.marginRight }}
               />
             )}
@@ -106,13 +108,16 @@ export default function Home() {
           height: '6vh',
           width: '15vw',
           position: 'absolute',
-          right: '-2vw',
+          right: '-3vw',
           bottom: '-0.5vh'
         }}>
         </div>
         
-      </div>
+        
+        
       
+        
+      </div>
     </main>
   );
 }

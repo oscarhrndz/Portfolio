@@ -8,10 +8,12 @@ import { ProjectCardProps } from '@/components/ProjectCard';
 const ProjPage = () => {
   const params = usePathname().split('/')[2];
   const [projectByUrl, setProject] = useState<ProjectCardProps | undefined>(undefined);
+  const [loading, setLoading] = useState<boolean>(true); // Loading state
 
   useEffect(() => {
     const project = Projects.find(project => project.url === params);
     setProject(project);
+    setLoading(false); // Set loading to false after fetching project
   }, [params]);
 
   return (
@@ -20,14 +22,15 @@ const ProjPage = () => {
         backgroundImage: 'url(/bg/bg_project.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-      }}> 
-      {projectByUrl ? (
+      }}>
+      {loading ? (
+        <span className="text-gray-200">Loading...</span> // Loading indicator
+      ) : projectByUrl ? (
         <div 
           className="w-full overflow-y-scroll mx-20" 
           style={{ maxHeight: 'calc(105vh)' }}
         >
-          <div 
-            className="relative font-bold text-center mt-8 mx-auto p-2 rounded-lg shadow-md flex"
+          <header className="relative font-bold text-center mt-8 mx-auto p-2 rounded-lg shadow-md flex"
             style={{
               backgroundColor: '#2d2d2d',
               color: 'white',
@@ -35,48 +38,45 @@ const ProjPage = () => {
               maxWidth: '94%',
               margin: '0 auto',
               marginTop: '8vh',
-            }}
-          >
+            }}>
             <h1 className='pl-3 text-2xl'>{projectByUrl.title}</h1>
-          </div>
-          
-          {/* Main Project Image with Responsive Sizing */}
+          </header>
+
+          {/* Main Project Image */}
           <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '3vh' }}>
             <Image 
               src={projectByUrl.src} 
               alt={projectByUrl.text} 
               className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] object-cover rounded-2xl"
-              width={1000} // Adjust this value based on your image size
-              height={600} // Adjust this value based on your image size
-              layout="responsive" // Ensures the image maintains aspect ratio
+              width={1000}
+              height={600}
+              layout="responsive"
             />
           </div>
 
-          {/* Container for Description, Technologies, GitHub, and Figma cards */}
+          {/* Description and Technology Cards */}
           <div className="flex flex-col lg:flex-row justify-between mt-6 mx-auto max-w-[75%] gap-4">
-            {/* Left Column with Description and Technologies Cards */}
             <div className="flex-1 flex flex-col gap-4">
-              {/* Description Card */}
-              <div className="p-5 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex-grow">
+              <section className="p-5 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex-grow">
                 <h2 className="text-xl font-bold mb-2">Description</h2>
                 <p>{projectByUrl.description}</p>
-              </div>
+              </section>
 
               {/* Technologies Card */}
-              <div className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200">
+              <section className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200">
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {projectByUrl?.tech?.map((logo, index) => (
+                  {projectByUrl.tech.map((logo, index) => (
                     <Image 
                       key={index} 
                       src={logo} 
-                      alt="Tech logo" 
-                      className='h-7 w-7'  // Adjusted size for the smaller card
-                      width={28}  // Set an appropriate width for tech logos
-                      height={28} // Set an appropriate height for tech logos
+                      alt={`Technology logo ${index + 1}`} 
+                      className='h-7 w-7'
+                      width={28}
+                      height={28}
                     />
                   ))}
                 </div>
-              </div>
+              </section>
 
               {/* GitHub Card */}
               <a 
@@ -87,11 +87,11 @@ const ProjPage = () => {
               >
                 <div className="flex items-center">
                   <Image 
-                    src="/github.svg" // Replace with your GitHub logo path
-                    alt="GitHub"
+                    src="/github.svg" 
+                    alt="GitHub repository"
                     className="w-8 h-8 mr-3" 
-                    width={32} // Set an appropriate width for the GitHub logo
-                    height={32} // Set an appropriate height for the GitHub logo
+                    width={32}
+                    height={32}
                   />
                   <span className="text-lg font-bold">View Code</span>
                 </div>
@@ -108,20 +108,20 @@ const ProjPage = () => {
               <div className="flex items-center mb-2">
                 <Image 
                   src="/figma.png" 
-                  alt="Figma Logo"
+                  alt="Figma logo"
                   className="w-5 h-5 mr-2"
-                  width={20} // Set an appropriate width for the Figma logo
-                  height={20} // Set an appropriate height for the Figma logo
+                  width={20}
+                  height={20}
                 />
                 <h2 className="text-xl font-bold">Figma</h2>
               </div>
               <Image 
                 src={projectByUrl.figma_image} 
-                alt="Figma Design"
+                alt="Figma design preview"
                 className="w-full h-auto rounded-lg mt-2 object-cover"
-                width={500}  // Set an appropriate width for the Figma design image
-                height={300} // Set an appropriate height for the Figma design image
-                layout="responsive" // Ensures the image maintains aspect ratio
+                width={500}
+                height={300}
+                layout="responsive"
               />
             </a>
           </div>
@@ -134,9 +134,9 @@ const ProjPage = () => {
                     src={mockup}
                     alt={`Mockup ${index + 1}`}
                     className="w-full h-auto rounded-lg max-w-[80%] pb-6"
-                    width={300}  // Set an appropriate width for mockup images
-                    height={200} // Set an appropriate height for mockup images
-                    layout="responsive" // Ensures the image maintains aspect ratio
+                    width={300}
+                    height={200}
+                    layout="responsive"
                   />
                 </div>
               ))}
