@@ -14,7 +14,7 @@ const Navigation = () => {
         if (prevPath !== path) {
             setisRouting(true);
         }
-    }, [path, prevPath]);
+    }, [path, prevPath]); // Keep path and prevPath in the dependency array
 
     useEffect(() => {
         if (isRouting) {
@@ -25,7 +25,7 @@ const Navigation = () => {
 
             return () => clearTimeout(timeout);
         }
-    }, [isRouting]);
+    }, [isRouting, path]); // Add path as a dependency here
 
     return (
         <div

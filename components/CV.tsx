@@ -24,7 +24,7 @@ const Cvs = () => {
 
             return () => clearTimeout(timeout);
         }
-    }, [isRouting]);
+    }, [isRouting, path]); // Add path as a dependency here
 
     return (
         <div

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Projects } from "@/constants";
 import { usePathname } from "next/navigation";
 import { ProjectCardProps } from '@/components/ProjectCard';
@@ -41,10 +42,13 @@ const ProjPage = () => {
           
           {/* Main Project Image with Responsive Sizing */}
           <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '3vh' }}>
-            <img 
+            <Image 
               src={projectByUrl.src} 
               alt={projectByUrl.text} 
               className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] object-cover rounded-2xl"
+              width={1000} // Adjust this value based on your image size
+              height={600} // Adjust this value based on your image size
+              layout="responsive" // Ensures the image maintains aspect ratio
             />
           </div>
 
@@ -62,11 +66,13 @@ const ProjPage = () => {
               <div className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200">
                 <div className="flex flex-wrap gap-2 justify-center">
                   {projectByUrl?.tech?.map((logo, index) => (
-                    <img 
+                    <Image 
                       key={index} 
                       src={logo} 
                       alt="Tech logo" 
                       className='h-7 w-7'  // Adjusted size for the smaller card
+                      width={28}  // Set an appropriate width for tech logos
+                      height={28} // Set an appropriate height for tech logos
                     />
                   ))}
                 </div>
@@ -80,10 +86,12 @@ const ProjPage = () => {
                 className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center"
               >
                 <div className="flex items-center">
-                  <img 
+                  <Image 
                     src="/github.svg" // Replace with your GitHub logo path
                     alt="GitHub"
                     className="w-8 h-8 mr-3" 
+                    width={32} // Set an appropriate width for the GitHub logo
+                    height={32} // Set an appropriate height for the GitHub logo
                   />
                   <span className="text-lg font-bold">View Code</span>
                 </div>
@@ -98,29 +106,37 @@ const ProjPage = () => {
               className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block h-full md:mt-4 lg:mt-0"
             >
               <div className="flex items-center mb-2">
-                <img 
+                <Image 
                   src="/figma.png" 
                   alt="Figma Logo"
                   className="w-5 h-5 mr-2"
+                  width={20} // Set an appropriate width for the Figma logo
+                  height={20} // Set an appropriate height for the Figma logo
                 />
                 <h2 className="text-xl font-bold">Figma</h2>
               </div>
-              <img 
+              <Image 
                 src={projectByUrl.figma_image} 
                 alt="Figma Design"
                 className="w-full h-auto rounded-lg mt-2 object-cover"
+                width={500}  // Set an appropriate width for the Figma design image
+                height={300} // Set an appropriate height for the Figma design image
+                layout="responsive" // Ensures the image maintains aspect ratio
               />
             </a>
           </div>
 
-          <div className="mt-6 mx-auto w-full mb-4 max-w-[75%]">
+          <div className="mt-6 mx-auto w-full mb-20 max-w-[75%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
               {projectByUrl.mockups.map((mockup, index) => (
                 <div key={index} className="flex justify-center">
-                  <img
+                  <Image
                     src={mockup}
                     alt={`Mockup ${index + 1}`}
                     className="w-full h-auto rounded-lg max-w-[80%] pb-6"
+                    width={300}  // Set an appropriate width for mockup images
+                    height={200} // Set an appropriate height for mockup images
+                    layout="responsive" // Ensures the image maintains aspect ratio
                   />
                 </div>
               ))}

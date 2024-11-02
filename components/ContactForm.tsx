@@ -38,7 +38,7 @@ const ContactForm = () => {
       style={{ background: 'rgba(0, 0, 0, 0.4)', minHeight: '65vh' }}>
       <form onSubmit={sendEmail} className="w-full" style={{ width: '45vw', marginRight: '0vw' }}>
         <h1 className="text-2xl font-thin mb-5 text-gray-50">
-          LET'S <span className="text-3xl font-bold text-purple-800">CONNECT</span> AND <span className="text-3xl font-bold text-purple-800">WORK</span> TOGETHER
+          LET&apos;S <span className="text-3xl font-bold text-purple-800">CONNECT</span> AND <span className="text-3xl font-bold text-purple-800">WORK</span> TOGETHER
         </h1>
         <div className="mb-4">
           <input
