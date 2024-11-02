@@ -107,7 +107,7 @@ export default function Home() {
           height: '6vh',
           width: '15vw',
           position: 'absolute',
-          right: '-2vw',
+          right: '-2.5vw',
           bottom: '-0.5vh'
         }}>
         </div>
