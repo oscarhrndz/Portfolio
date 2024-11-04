@@ -19,26 +19,15 @@ div {
 }
 
 
-.modal-overlay {
-  cursor: default; /* Prevents the pointer cursor on the overlay */
-}
-
 
 
 
 /* globals.css or a specific CSS module */
 
-.text-with-image {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  min-height: 100vh; /* Full height of the viewport */
-  color: white; /* Ensuring text is white */
-}
+
 
 .extra-margin {
-  margin: 0 2vw; /* Add any additional margins you want */
+  margin: 0 0vw; /* Add any additional margins you want */
 }
 
 .static-text {
@@ -91,3 +80,8 @@ input:-internal-autofill-selected {
 }
 
 
+/* globals.css or a specific CSS module */
+
+.move-left {
+  transform: translateX(12vw); /* Adjust the value as needed */
+}

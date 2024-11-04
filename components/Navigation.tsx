@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { NavLinks } from '@/constants';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,7 +15,7 @@ const Navigation = () => {
             style={{
                 width: '5.1vw',
                 height: '32vh',
-                top: '8vh',
+                bottom: '60vh',
                 left: '3.6vw',
                 maxWidth: '6rem',
                 maxHeight: '15rem',
@@ -44,3 +44,6 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+
+

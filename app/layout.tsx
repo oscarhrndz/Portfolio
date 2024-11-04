@@ -12,6 +12,7 @@ import { usePathname } from 'next/navigation';
 import HideIt from '@/components/HideWaterMark';
 import LoadingIndicator from '@/components/LoadingIndicator'; // Import the loading indicator
 import TextWithImage from '@/components/TextImage';
+import Transition from '@/components/Transition';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -49,13 +50,14 @@ export default function RootLayout({
         {/* Conditionally render Navigation, CVLink, and Navbar after page load */}
         {isPageLoaded && (
           <>
-            <Navbar />
-            <Navigation />
-            <CVLink />
+          <div className={pathname === '/' ? "move-left" : ''}><Navbar /><Navigation />
+          <CVLink /></div>
+ 
+            
             {/* Render SplineComponent only on the homepage */}
             {pathname === '/' && <SplineComponent />}
-            {pathname === '/' && <HideIt />}
-            {pathname === '/' && <TextWithImage />}
+            
+            {pathname === '/' && <Transition />}
           </>
         )}
       </body>

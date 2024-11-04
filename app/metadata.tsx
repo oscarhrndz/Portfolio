@@ -2,6 +2,6 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Webchain dev',
-  description: 'This is my portfolio',
+  title: 'Oscar Portfolio',
+  description: 'This is my Portfolio. I am Oscar Hernandez. Check all the website and feel free to contact me :)',
 };
