@@ -126,6 +126,32 @@ export const Projects = [
     mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
     github_link: 'https://github.com/oscarhrndz/rental_car'
   },
+  {
+    id: 3,
+    title: "Supermarket Online Shop",
+    text: "Modern and minimalist Renting Car Application. Differents cars, users and places can be chosen.",
+    src: "/rentalcar/showcase.png",
+    url: "rental_car",
+    description: "The Rental Car application is designed to simplify the process of renting cars. Users can easily browse and compare various car models based on important details such as price, mileage, features, and specifications. Additionally, the application provides information about the car's owner and its location.",
+    tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
+    figma_image: '/rentalcar/figma.png',
+    figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=16-2',
+    mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
+    github_link: 'https://github.com/oscarhrndz/rental_car'
+  },
+  {
+    id: 4,
+    title: "Supermarket Online Shop",
+    text: "Modern and minimalist Renting Car Application. Differents cars, users and places can be chosen.",
+    src: "/rentalcar/showcase.png",
+    url: "mock",
+    description: "Supermarket Online Shop is an application for Supermarket Users. In this application, users can check the products and their prices. Moreover, they can check their location and similar products",
+    tech: ['/java.png','/firebase.png','/android.png'],
+    figma_image: '/supermarket/figma.png',
+    figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=0-1',
+    mockups:["/supermarket/mockup1.png","/supermarket/mockup2.png","/supermarket/mockup3.png"],
+    github_link: 'https://github.com/oscarhrndz/Supermarket_Online_Shop'
+  },
   
 ];
 

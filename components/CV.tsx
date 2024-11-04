@@ -33,7 +33,7 @@ const Cvs = () => {
                 width: '5.1vw',
                 maxWidth: '6rem',
                 padding: '0.6rem',
-                bottom: '8vh',
+                bottom: '45.5vh',
                 left: '3.6vw',
                 backgroundColor: '#1a1a1a',
                 height: '8.6vh', // Fixed height to maintain position

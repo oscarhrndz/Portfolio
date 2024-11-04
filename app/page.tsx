@@ -21,31 +21,32 @@ export default function Home() {
           }
         },
         { 
-          text: "My Social Network", 
-          img: "/brack.svg", 
-          style: { 
-            height: '45vh', 
-            marginLeft: '-0.3vw', 
-            color: 'white', 
-            imgMarginTop: '19vh', 
-            imgMarginBottom: '0vh', 
-            textMarginTop: '9vh', 
-            textMarginBottom: '5.5vh'
-          }
-        },
-        { 
           text: "Download my CV", 
           img: "/equal.svg", 
           style: { 
             height: '25vh', 
             marginLeft: '0.5vw', 
             color: 'white', 
-            imgMarginTop: '13vh', 
+            imgMarginTop: '14.5vh', 
             imgMarginBottom: '0vh', 
             textMarginTop: '2.5vh', 
             textMarginBottom: '6vh'
           }
         },
+        { 
+          text: "My Social Network", 
+          img: "/brack.svg", 
+          style: { 
+            height: '45vh', 
+            marginLeft: '-0.3vw', 
+            color: 'white', 
+            imgMarginTop: '5vh', 
+            imgMarginBottom: '0vh', 
+            textMarginTop: '9vh', 
+            textMarginBottom: '5.5vh'
+          }
+        },
+        
     ];
 
     return (

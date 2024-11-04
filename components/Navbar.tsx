@@ -7,12 +7,12 @@ import { Socials } from '@/constants';
 const Navbar = () => {
   return (
     <div 
-      className="fixed z-[50] flex flex-col justify-center items-center gap-4 py-6 rounded-lg"
+      className="fixed z-[50] flex flex-col justify-center items-center gap-4 py-6 rounded-lg bottom-14"
       style={{
         width: '5.1vw',
         maxWidth: '6rem',
         
-        bottom: '22.5vh', // Adjust this to position the navbar higher or lower
+         // Adjust this to position the navbar higher or lower
         left: '3.6vw',
         backgroundColor: '#1a1a1a'
       }}

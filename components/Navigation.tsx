@@ -1,49 +1,55 @@
-"use client"
+"use client";
 import { NavLinks } from '@/constants';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+interface NavigationProps {
+    isMobile: boolean; // Define the prop type for isMobile
+}
 
 const Navigation = () => {
-    
     const path = usePathname();
-    
 
     return (
         <div
-            className="fixed z-[50] rounded-lg flex flex-col justify-center items-center"
-            style={{
-                width: '5.1vw',
-                height: '32vh',
-                bottom: '60vh',
-                left: '3.6vw',
-                maxWidth: '6rem',
-                maxHeight: '15rem',
-                backgroundColor: "#1a1a1a",
-                paddingTop: '3vh'
-            }}
+            className="fixed z-[50] rounded-lg flex flex-col justify-center items-center bg-gray-800 md:bg-[#1a1a1a] md:bottom-[60vh] md:left-[3.6vw] md:w-[5.1vw] md:h-[32vh] max-h-[15rem] p-4 md:p-[3vh] transition-all duration-300"
         >
-            
-            
-                {NavLinks.map((nav) => (
-                    <Link
-                        key={nav.name}
-                        href={nav.link}
-                        className="mb-[1.5rem]"
-                    >
-                        <nav.icon
-                            className={`w-[1.5rem] h-[1.5rem] ${
-                                path === nav.link ? "text-purple-800" : "text-white"
-                            }`}
-                        />
-                    </Link>
-                ))}
-            
+            {NavLinks.map((nav) => (
+                <Link
+                    key={nav.name}
+                    href={nav.link}
+                    className="mb-3 mt-3" // Default margin for larger screens
+                >
+                    <nav.icon
+                        className={`w-6 h-6 ${
+                            path === nav.link ? "text-purple-800" : "text-white"
+                        }`}
+                    />
+                </Link>
+            ))}
+
+            <style jsx>{`
+                /* Styles for small screens */
+                @media (max-width: 768px) {
+                    div {
+                        width: full; /* Full width for mobile */
+                        height: 10vh; /* Adjust height for mobile */
+                        bottom: 0; /* Position at the bottom */
+                        left: 0; /* Align to the left */
+                        flex-direction: row; /* Change to horizontal layout */
+                        justify-content: space-around; /* Space links evenly */
+                        padding: 0; /* Remove padding for mobile */
+                        background-color: #a1a1a1; /* Change background for mobile */
+                    }
+
+                    .mb-6 {
+                        margin-bottom: 0; /* Remove vertical margin for mobile */
+                        margin-right: 1rem; /* Add margin for horizontal layout */
+                    }
+                }
+            `}</style>
         </div>
     );
 };
 
 export default Navigation;
-
-
-

@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
   return (
     <Link href={`my-projects/${url}`}>
       <div
-        className="rounded-lg shadow-md overflow-hidden bg-white w-[36vw] h-[65vh] flex flex-col"
+        className="rounded-lg shadow-md overflow-hidden bg-white w-[36vw] h-[65vh] flex flex-col project-card" // Keep the same width and height
         style={{
           backgroundColor: '#1a1a1a',
         }}
@@ -30,8 +30,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
           src={src} 
           alt={title} 
           className="w-full h-[47vh] object-cover" // Fixed height for images
-          width={500} // Placeholder width
-          height={200} // Set the same height here
+          width={1920} // Placeholder width
+          height={1080} // Set the same height here
         />
         
         {/* Container for the Title, Logos, and Description */}
@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
             <h3 className="text-xl font-semibold text-white">{title}</h3>
             
             {/* Tech Logos */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 tech-logos">
               {tech.map((logo, index) => (
                 <Image 
                   key={index} 
@@ -56,9 +56,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
           </div>
 
           {/* Description Text */}
-          <p className="text-gray-400 flex-grow">{text}</p>
+          <p className="text-gray-400 flex-grow overflow-hidden">{text}</p> {/* Fixed height for the text */}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .project-card {
+            width: 80vw; // Set the width of the card for smaller screens
+            margin: 0 auto; // Center the card horizontally
+          }
+        }
+        @media (max-width: 550px) {
+          .tech-logos {
+            display: none; // Hide tech logos on small screens
+          }
+        }
+      `}</style>
     </Link>
   );
 };

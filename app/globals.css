@@ -27,7 +27,7 @@ div {
 
 
 .extra-margin {
-  margin: 0 0vw; /* Add any additional margins you want */
+  margin: 0 2vw; /* Add any additional margins you want */
 }
 
 .static-text {
@@ -82,6 +82,6 @@ input:-internal-autofill-selected {
 
 /* globals.css or a specific CSS module */
 
-.move-left {
-  transform: translateX(12vw); /* Adjust the value as needed */
+.move-right {
+  transform: translateX(14vw); /* Adjust the value as needed */
 }

@@ -7,17 +7,17 @@ import ProjectCard from '@/components/ProjectCard';
 const Page: React.FC = () => {
   return (
     <div className='w-screen h-screen flex items-center justify-center'
-    style={{
-      backgroundImage: 'url(/bg/bg_my_projects.jpg)', // Use string directly if in public
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      paddingLeft: '2vw'
-    }}>
+      style={{
+        backgroundImage: 'url(/bg/bg_my_projects.jpg)', // Use string directly if in public
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        paddingLeft: '2vw'
+      }}>
       {/* Full-width, scrollable container */}
       <div className='w-full h-full overflow-y-auto'> 
         {/* Inner content container for project cards */}
-        <div className='mx-auto max-w-[90%]'
-        style={{paddingTop: '8vh', paddingBottom: '2.2vh'}}> {/* Adjusted to center content and add padding */}
+        <div className='pt-14 pb-4'
+          > {/* Adjusted to center content and add padding */}
           <div className='flex flex-col gap-14'>
             {Projects.reduce((acc: JSX.Element[], project, index) => {
               if (index % 2 === 0) {
@@ -59,6 +59,22 @@ const Page: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .flex {
+            flex-direction: column; // Stack cards vertically on small screens
+            align-items: center; // Center cards
+            
+          }
+          .gap-12 {
+            margin: 0; // Remove margin for smaller screens
+          }
+          .mb-10 {
+            margin-bottom: 20px; // Adjust margin for smaller screens
+          }
+        }
+      `}</style>
     </div>
   );
 }
