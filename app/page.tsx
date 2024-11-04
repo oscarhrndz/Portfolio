@@ -1,8 +1,6 @@
 // app/page.tsx
 
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Spline from '@splinetool/react-spline/next';
 import Image from 'next/image'; 
 
 

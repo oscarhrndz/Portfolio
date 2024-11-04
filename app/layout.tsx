@@ -9,9 +9,7 @@ import Navigation from '@/components/Navigation';
 import CVLink from '@/components/CV';
 import SplineComponent from '@/components/Spline';
 import { usePathname } from 'next/navigation';
-import HideIt from '@/components/HideWaterMark';
 import LoadingIndicator from '@/components/LoadingIndicator'; // Import the loading indicator
-import TextWithImage from '@/components/TextImage';
 import Transition from '@/components/Transition';
 
 const inter = Inter({ subsets: ['latin'] });
