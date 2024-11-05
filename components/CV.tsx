@@ -63,7 +63,7 @@ const Cvs = () => {
                         flex-direction: row; /* Change to horizontal layout */
                         justify-content: space-around; /* Space links evenly */
                         max-height: 9vh;
-                        max-width: 7vw;
+                        max-width: 10vw;
                         min-height: 5vw
 
                         background-color: #1a1a1a; /* Change background for mobile */
