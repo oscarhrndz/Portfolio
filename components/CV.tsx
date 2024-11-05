@@ -28,19 +28,7 @@ const Cvs = () => {
 
     return (
         <div
-            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white"
-            style={{
-                width: '5.1vw',
-                maxWidth: '6rem',
-                padding: '0.6rem',
-                bottom: '45.5vh',
-                left: '3.6vw',
-                backgroundColor: '#1a1a1a',
-                height: '8.6vh', // Fixed height to maintain position
-                minHeight: '8.6vh',
-                overflow: 'hidden',
-            }}
-        >
+            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white overflow-hidden w-[5.1vw] h-[8.6vh] bg-[#1a1a1a] left-[3.6vw] bottom-[45.5vh] p-[0.6rem]">
             {isRouting && <Transition />}
             {CV.length > 0 ? (
                 CV.map((cv) => (
@@ -68,6 +56,27 @@ const Cvs = () => {
                     Loading...
                 </span>
             )}
+
+<style jsx>{`
+                /* Styles for small screens */
+                @media (max-width: 768px) {
+                    div {
+                        width: 10%; /* Full width for mobile */
+                        height: 8%; /* Adjust height for mobile */
+                        top: 2%; /* Position at the bottom */
+                        left: 2%; /* Align to the left */
+                        flex-direction: row; /* Change to horizontal layout */
+                        justify-content: space-around; /* Space links evenly */
+
+                        background-color: #1a1a1a; /* Change background for mobile */
+                    }
+
+                    .mb-6 {
+                        margin-bottom: 0; /* Remove vertical margin for mobile */
+                        margin-right: 1rem; /* Add margin for horizontal layout */
+                    }
+                }
+            `}</style>
         </div>
     );
 };

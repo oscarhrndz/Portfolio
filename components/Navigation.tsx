@@ -29,14 +29,15 @@ const Navigation = () => {
                 /* Styles for small screens */
                 @media (max-width: 768px) {
                     div {
-                        width: 40%; /* Full width for mobile */
-                        height: 7vh; /* Adjust height for mobile */
+                        width: 100%; /* Full width for mobile */
+                        height: 5vh; /* Adjust height for mobile */
                         bottom: 0; /* Position at the bottom */
                         left: 0; /* Align to the left */
                         flex-direction: row; /* Change to horizontal layout */
                         justify-content: space-around; /* Space links evenly */
                         padding: 0; /* Remove padding for mobile */
-                        background-color: #a1a1a1; /* Change background for mobile */
+                        background-color: #1a1a1a; /* Change background for mobile */
+                        border-radius: 0; /* Remove rounded corners for mobile */
                     }
 
                     .mb-6 {
