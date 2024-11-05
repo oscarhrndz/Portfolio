@@ -29,8 +29,8 @@ const Navigation = () => {
                 /* Styles for small screens */
                 @media (max-width: 768px) {
                     div {
-                        width: full; /* Full width for mobile */
-                        height: 10vh; /* Adjust height for mobile */
+                        width: 40%; /* Full width for mobile */
+                        height: 7vh; /* Adjust height for mobile */
                         bottom: 0; /* Position at the bottom */
                         left: 0; /* Align to the left */
                         flex-direction: row; /* Change to horizontal layout */

@@ -35,11 +35,27 @@ const ContactForm = () => {
 
   return (
     <div
-      className="p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full h-auto mx-auto overflow-y-auto"
-      style={{ background: 'rgba(0, 0, 0, 0.4)', minHeight: '65vh' }}
+      className="p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full mx-auto -mt-20 lg:mt-5"
+      style={{
+        background: 'rgba(0, 0, 0, 0.4)',
+        minHeight: '90vh',
+        maxHeight: '80vh',
+        overflowY: 'scroll', // Enable scrolling
+        scrollbarWidth: 'none', // Firefox
+        msOverflowStyle: 'none', // IE and Edge
+        WebkitOverflowScrolling: 'touch', // For smooth scrolling on iOS
+      }}
+      // Hide scrollbar for Webkit browsers
+      onWheel={(e) => {
+        e.currentTarget.scrollBy({
+          top: e.deltaY,
+          behavior: 'smooth',
+        });
+        e.preventDefault();
+      }}
     >
       <form onSubmit={sendEmail} className="w-full lg:w-[45%] mb-8 lg:mb-0">
-        <h1 className="text-2xl font-thin mb-5 text-gray-50">
+        <h1 className="title-form text-2xl font-thin mb-5 text-gray-50">
           LET&apos;S <span className="text-3xl font-bold text-purple-800">CONNECT</span> AND <span className="text-3xl font-bold text-purple-800">WORK</span> TOGETHER
         </h1>
         <div className="mb-4">
@@ -49,7 +65,7 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none"
+            className="input-form w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none"
             style={{ background: '#363636' }}
             required
           />
@@ -61,7 +77,7 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none"
+            className="input-form w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none"
             style={{ background: '#363636' }}
             required
           />
@@ -72,14 +88,14 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none resize-none"
+            className="input-form w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none resize-none"
             style={{ background: '#363636', height: '35vh' }}
             maxLength={350}
             required
           ></textarea>
-          <div className="text-gray-500 text-sm mt-1 text-right">Max 350 characters</div>
+          <div className="maximum-text text-gray-500 text-sm mt-1 text-right">Max 350 characters</div>
         </div>
-        <div className="flex items-center">
+        <div className="button-contact2 flex items-center">
           <button
             type="submit"
             className="px-6 py-2 text-sm text-white uppercase rounded-lg hover:bg-blue-400 transition-all duration-150 ease-linear"
@@ -96,14 +112,38 @@ const ContactForm = () => {
       {/* Contact details move below form on smaller screens */}
       <div className="flex flex-col items-start w-full lg:w-[35%] text-gray-200">
         <div className="mb-6 text-left">
-          <p className="text-base text-gray-500">Email</p>
-          <p className="text-xl font-semibold border-b border-gray-100 pb-1">oscarhernandezsoler@gmail.com</p>
+          <p className="title-contact text-base text-gray-500">Email</p>
+          <p className="data-contact text-xl font-semibold border-b border-gray-100 pb-1">oscarhernandezsoler@gmail.com</p>
         </div>
         <div className="text-left">
-          <p className="text-base text-gray-500">Phone number</p>
-          <p className="text-xl font-semibold border-b border-gray-400 pb-1">+34 646041002</p>
+          <p className="title-contact text-base text-gray-500">Phone number</p>
+          <p className="data-contact text-xl font-semibold border-b border-gray-400 pb-1">+34 646041002</p>
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 500px) {
+          .title-form {
+            font-size: 1.3rem;
+          }
+          .input-form {
+            font-size: 0.9rem;
+            padding: 0.5rem; /* Adjusted padding for smaller input fields */
+          }
+          .button-contact2 button {
+            font-size: 0.8rem; /* Smaller font size */
+            padding: 0.5rem 1rem; /* Adjust padding */
+          }
+          .maximum-text {
+            font-size: 0.7rem;
+          }
+          .title-contact {
+            font-size: 0.8rem; /* Smaller font size under 500px */
+          }
+          .data-contact {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };

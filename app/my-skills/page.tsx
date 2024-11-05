@@ -14,7 +14,7 @@ const Page = () => {
       backgroundSize: 'cover',
       backgroundPosition: '30% 70%',
     }} // Set background color to white
-      className="h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
+      className="background-skill h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
     >
       <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
         <div className="flex flex-col items-center gap-4 pt-5">
