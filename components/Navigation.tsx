@@ -30,7 +30,7 @@ const Navigation = () => {
                 @media (max-width: 768px) {
                     div {
                         width: 100%; /* Full width for mobile */
-                        height: 5vh; /* Adjust height for mobile */
+                        height: 6vh; /* Adjust height for mobile */
                         bottom: 0; /* Position at the bottom */
                         left: 0; /* Align to the left */
                         flex-direction: row; /* Change to horizontal layout */

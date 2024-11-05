@@ -28,7 +28,7 @@ const Cvs = () => {
 
     return (
         <div
-            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white overflow-hidden w-[5.1vw] h-[8.6vh] bg-[#1a1a1a] left-[3.6vw] bottom-[45.5vh] p-[0.6rem]">
+            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white overflow-hidden w-[5.1vw] h-[8.6vh] bg-[#1a1a1a] left-[3.6vw] bottom-[44.5vh] p-[0.6rem]">
             {isRouting && <Transition />}
             {CV.length > 0 ? (
                 CV.map((cv) => (
@@ -36,15 +36,9 @@ const Cvs = () => {
                         key={cv.name}
                         href={cv.href}
                         download
-                        className="text-white"
+                        className="text-white block m-0 h-[2.5rem] leading-6 text-center text-sm"
                         style={{
-                            fontSize: '15px',
-                            display: 'block',
-                            textAlign: 'center',
-                            margin: '0',
                             padding: '0.5rem 0',
-                            lineHeight: '1.5',
-                            height: '2.5rem', // Fixed height for each link
                             transition: 'opacity 0.3s ease', // Smooth transition for opacity
                         }}
                     >
@@ -61,19 +55,18 @@ const Cvs = () => {
                 /* Styles for small screens */
                 @media (max-width: 768px) {
                     div {
-                        width: 10%; /* Full width for mobile */
-                        height: 8%; /* Adjust height for mobile */
-                        top: 2%; /* Position at the bottom */
-                        left: 2%; /* Align to the left */
+                        width: 20vw; /* Full width for mobile */
+                        height: 6vh; /* Adjust height for mobile */
+                        padding-top: 0vh;
+                        top: 2.5%; /* Position at the bottom */
+                        left: 3%; /* Align to the left */
                         flex-direction: row; /* Change to horizontal layout */
                         justify-content: space-around; /* Space links evenly */
+                        max-height: 9vh;
+                        max-width: 7vw;
+                        min-height: 5vw
 
                         background-color: #1a1a1a; /* Change background for mobile */
-                    }
-
-                    .mb-6 {
-                        margin-bottom: 0; /* Remove vertical margin for mobile */
-                        margin-right: 1rem; /* Add margin for horizontal layout */
                     }
                 }
             `}</style>
