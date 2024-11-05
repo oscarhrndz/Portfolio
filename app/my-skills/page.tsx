@@ -5,9 +5,15 @@ import "swiper/css";
 import { SkillData } from "@/constants";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
+import Head from "next/head";
 
 const Page = () => {
   return (
+    <>
+            <Head>
+                {/* Set the theme color for the navigation bar */}
+                <meta name="theme-color" content="#1a1a1a" />
+            </Head>
     <div
     style={{
       backgroundImage: 'url(/bg/bg_skills.jpg)', // Use string directly if in public
@@ -75,6 +81,7 @@ const Page = () => {
         </Swiper>
       </div>
     </div>
+    </>
   );
 };
 

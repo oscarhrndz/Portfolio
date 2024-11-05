@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image'; 
-
+import Head from 'next/head'; // Import Head for custom meta tags
 
 export default function Home() {
  
@@ -46,54 +46,55 @@ export default function Home() {
             textMarginBottom: '5.5vh'
           }
         },
-        
     ];
 
     return (
-        <main className="w-screen h-screen flex items-start p-8 relative"
-      style={{
-        backgroundImage: 'url(/bg/bg_home.jpg)', 
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}>
-      <div className="text-with-image extra-margin z-10 ">
-        {content.map((item, index) => (
-          <div 
-            key={index} 
-            className="flex items-center " 
-            style={{ 
-              marginTop: item.style.imgMarginTop, 
-              marginBottom: item.style.imgMarginBottom 
-            }}
-          >
-            <span 
-              className="static-text mr-3" 
-              style={{ 
-                color: item.style.color, 
-                fontSize: '14px', 
-                marginTop: item.style.textMarginTop, 
-                marginBottom: item.style.textMarginBottom 
-              }}
-            >
-              {item.text}
-            </span>
-            {item.img && (
-              <Image
-                src={item.img}
-                alt="Decorative Shape"
-                height={parseInt(item.style.height)} 
-                width={parseInt(item.style.height)} 
-                style={{ marginLeft: item.style.marginLeft }}
-              />
-            )}
-            
-          </div>
-        ))}
-      </div>
+        <>
+            <Head>
+                {/* Set the theme color for the navigation bar */}
+                <meta name="theme-color" content="#1a1a1a" />
+            </Head>
 
-            
-                
-           
-        </main>
+            <main className="w-screen h-screen flex items-start p-8 relative"
+              style={{
+                backgroundImage: 'url(/bg/bg_home.jpg)', 
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}>
+              <div className="text-with-image extra-margin z-10 ">
+                {content.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-center " 
+                    style={{ 
+                      marginTop: item.style.imgMarginTop, 
+                      marginBottom: item.style.imgMarginBottom 
+                    }}
+                  >
+                    <span 
+                      className="static-text mr-3" 
+                      style={{ 
+                        color: item.style.color, 
+                        fontSize: '14px', 
+                        marginTop: item.style.textMarginTop, 
+                        marginBottom: item.style.textMarginBottom 
+                      }}
+                    >
+                      {item.text}
+                    </span>
+                    {item.img && (
+                      <Image
+                        src={item.img}
+                        alt="Decorative Shape"
+                        height={parseInt(item.style.height)} 
+                        width={parseInt(item.style.height)} 
+                        style={{ marginLeft: item.style.marginLeft }}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </main>
+        </>
     );
 }

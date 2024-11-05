@@ -21,11 +21,21 @@ const SplineComponent = () => {
         }
 
         /* Responsive adjustments for smaller screens */
+         @media (max-width: 1050px) {
+          .spline-container {
+            position: absolute;
+            top: 50%;
+            
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            height: 70vh;
+          }
+        }
         @media (max-width: 768px) {
           .spline-container {
             position: absolute;
             top: 50%;
-            left: 50%;
+            
             transform: translate(-50%, -50%);
             width: 90vw;
             height: 70vh;
@@ -35,8 +45,8 @@ const SplineComponent = () => {
         /* Adjustments for very small screens, like phones */
         @media (max-width: 480px) {
           .spline-container {
-            width: 95vw;
-            height: 60vh;
+            width: 100%;
+            height: 100%;
           }
         }
       `}</style>
