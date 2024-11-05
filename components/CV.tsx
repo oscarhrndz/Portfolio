@@ -64,7 +64,7 @@ const Cvs = () => {
                         justify-content: space-around; /* Space links evenly */
                         max-height: 9vh;
                         max-width: 10vw;
-                        min-height: 5vw
+                        min-height: 9vh;
 
                         background-color: #1a1a1a; /* Change background for mobile */
                     }
