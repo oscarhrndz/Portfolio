@@ -23,11 +23,11 @@ export default function RootLayout({
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [width] = useDeviceSize()
   const pathname = usePathname();
-  console.log(window.innerWidth)
+
 
   
   useLayoutEffect(() => {
-    console.log(window.innerWidth)
+
     const handleLoad = () => setIsPageLoaded(true);
 
     // Check if the document is already loaded
