@@ -28,7 +28,7 @@ const Cvs = () => {
 
     return (
         <div
-            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white overflow-hidden w-[5.1vw] h-[8.6vh] bg-[#1a1a1a] left-[3.6vw] bottom-[44.5vh] p-[0.6rem]">
+            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white overflow-hidden p-2 md:w-[5.1vw] h-[8.6vh] bg-[#1a1a1a] left-[3.6vw] bottom-[44.5vh] md:p-[0.6rem]">
             {isRouting && <Transition />}
             {CV.length > 0 ? (
                 CV.map((cv) => (
@@ -36,7 +36,7 @@ const Cvs = () => {
                         key={cv.name}
                         href={cv.href}
                         download
-                        className="text-white block m-0 h-[2.5rem] leading-6 text-center text-sm"
+                        className="text-white block m-0 pb-2 h-[2.5rem] leading-6 text-center md:text-sm text-[10px]"
                         style={{
                             padding: '0.5rem 0',
                             transition: 'opacity 0.3s ease', // Smooth transition for opacity

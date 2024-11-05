@@ -11,6 +11,7 @@ import SplineComponent from '@/components/Spline';
 import { usePathname } from 'next/navigation';
 import LoadingIndicator from '@/components/LoadingIndicator'; // Import the loading indicator
 import Transition from '@/components/Transition';
+import useDeviceSize from "./hook"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,9 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
+  const [width] = useDeviceSize()
   const pathname = usePathname();
+  console.log(window.innerWidth)
 
+  
   useLayoutEffect(() => {
+    console.log(window.innerWidth)
     const handleLoad = () => setIsPageLoaded(true);
 
     // Check if the document is already loaded
@@ -48,7 +53,7 @@ export default function RootLayout({
         {/* Conditionally render Navigation, CVLink, and Navbar after page load */}
         {isPageLoaded && (
           <>
-          <div className={pathname === '/' ? "move-right" : ''}><Navbar /><Navigation />
+          <div className={pathname === '/' && width >= 600 ? "move-right" : ''}><Navbar /><Navigation />
           <CVLink /></div>
  
             

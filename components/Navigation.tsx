@@ -9,7 +9,7 @@ const Navigation = () => {
 
     return (
         <div
-            className="fixed z-[50] rounded-lg flex flex-col justify-center items-center bg-gray-800 md:bg-[#1a1a1a] md:bottom-[60vh] md:left-[3.6vw] md:w-[5.1vw] md:h-[32vh] max-h-[15rem] p-4 md:p-[3vh] transition-all duration-300"
+            className="fixed z-[50] rounded-lg flex flex-col py-2 justify-center items-center bg-gray-800 md:bg-[#1a1a1a] md:bottom-[60vh] md:left-[3.6vw] md:w-[5.1vw] md:h-[32vh] max-h-[15rem] p-4 md:p-[3vh] transition-all duration-300"
         >
             {NavLinks.map((nav) => (
                 <Link
