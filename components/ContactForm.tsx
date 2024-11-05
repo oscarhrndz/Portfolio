@@ -35,9 +35,10 @@ const ContactForm = () => {
 
   return (
     <div
-      className="p-8 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start mx-auto min-h-[70vh] w-[100%] bg-[rgba(0,0,0,0.5)]"
+      className="p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full h-auto mx-auto overflow-y-auto"
+      style={{ background: 'rgba(0, 0, 0, 0.4)', minHeight: '65vh' }}
     >
-      <form onSubmit={sendEmail} className="w-full lg:w-[60%] mr-0 mb-8 lg:mb-0">
+      <form onSubmit={sendEmail} className="w-full lg:w-[45%] mb-8 lg:mb-0">
         <h1 className="text-2xl font-thin mb-5 text-gray-50">
           LET&apos;S <span className="text-3xl font-bold text-purple-800">CONNECT</span> AND <span className="text-3xl font-bold text-purple-800">WORK</span> TOGETHER
         </h1>
@@ -48,7 +49,8 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none bg-gray-700"
+            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none"
+            style={{ background: '#363636' }}
             required
           />
         </div>
@@ -59,7 +61,8 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none bg-gray-700"
+            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none"
+            style={{ background: '#363636' }}
             required
           />
         </div>
@@ -69,7 +72,8 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none bg-gray-700 resize-none h-[35vh]"
+            className="w-full px-4 py-3 text-base text-gray-100 placeholder-gray-400 border-b border-black focus:outline-none resize-none"
+            style={{ background: '#363636', height: '35vh' }}
             maxLength={350}
             required
           ></textarea>
@@ -78,7 +82,8 @@ const ContactForm = () => {
         <div className="flex items-center">
           <button
             type="submit"
-            className="px-6 py-2 text-sm text-white uppercase rounded-lg hover:bg-blue-400 transition-all duration-150 ease-linear bg-gray-800"
+            className="px-6 py-2 text-sm text-white uppercase rounded-lg hover:bg-blue-400 transition-all duration-150 ease-linear"
+            style={{ background: '#393939' }}
           >
             Send a message
           </button>
@@ -88,7 +93,8 @@ const ContactForm = () => {
         </div>
       </form>
 
-      <div className="contact-info flex flex-col items-start lg:w-[35%] text-gray-200">
+      {/* Contact details move below form on smaller screens */}
+      <div className="flex flex-col items-start w-full lg:w-[35%] text-gray-200">
         <div className="mb-6 text-left">
           <p className="text-base text-gray-500">Email</p>
           <p className="text-xl font-semibold border-b border-gray-100 pb-1">oscarhernandezsoler@gmail.com</p>
@@ -98,19 +104,6 @@ const ContactForm = () => {
           <p className="text-xl font-semibold border-b border-gray-400 pb-1">+34 646041002</p>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 800px) {
-          .contact-container {
-            width: 100%;
-          }
-          .contact-info {
-            width: 100%;
-            margin-left: 0;
-            margin-top: 2rem;
-          }
-        }
-      `}</style>
     </div>
   );
 };

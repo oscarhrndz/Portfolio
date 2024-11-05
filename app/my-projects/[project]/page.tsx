@@ -5,7 +5,7 @@ import { Projects } from "@/constants";
 import { usePathname } from "next/navigation";
 import { ProjectCardProps } from '@/components/ProjectCard';
 
-const ProjPage = () => {
+const ProjPage: React.FC = () => {
   const params = usePathname().split('/')[2];
   const [projectByUrl, setProject] = useState<ProjectCardProps | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true); // Loading state
@@ -30,41 +30,33 @@ const ProjPage = () => {
           className="w-full overflow-y-scroll mx-20" 
           style={{ maxHeight: 'calc(105vh)' }}
         >
-          <header className="relative font-bold text-center mt-8 mx-auto p-2 rounded-lg shadow-md flex"
-            style={{
-              backgroundColor: '#2d2d2d',
-              color: 'white',
-              width: '75%',
-              maxWidth: '94%',
-              margin: '0 auto',
-              marginTop: '8vh',
-            }}>
-            <h1 className='pl-3 text-2xl'>{projectByUrl.title}</h1>
+          <header className="title-bg relative font-bold text-center mt-14 mx-auto p-2 rounded-lg shadow-md flex bg-[#2d2d2d] text-white w-[75%] items-center justify-center">
+            <h1 className='project-title text-2xl'>{projectByUrl.title}</h1>
           </header>
 
           {/* Main Project Image */}
-          <div className="relative rounded-2xl overflow-hidden w-full max-w-[75%] mx-auto" style={{ marginTop: '3vh' }}>
+          <div className="project-image relative rounded-2xl overflow-hidden w-[75%] mx-auto mt-5" >
             <Image 
               src={projectByUrl.src} 
               alt={projectByUrl.text} 
               className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] object-cover rounded-2xl"
-              width={1000}
-              height={600}
+              width={1920}
+              height={1080}
               layout="responsive"
             />
           </div>
 
           {/* Description and Technology Cards */}
-          <div className="flex flex-col lg:flex-row justify-between mt-6 mx-auto max-w-[75%] gap-4">
-            <div className="flex-1 flex flex-col gap-4">
-              <section className="p-5 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex-grow">
-                <h2 className="text-xl font-bold mb-2">Description</h2>
-                <p>{projectByUrl.description}</p>
+          <div className="cards flex flex-col lg:flex-row justify-between mt-5 mx-auto w-[75%] gap-4">
+            <div className="cards2 flex-1 flex flex-col gap-4">
+              <section className="description-section p-5 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex-grow">
+                <h2 className="description-title text-xl font-bold mb-2">Description</h2>
+                <p className='description'>{projectByUrl.description}</p>
               </section>
 
               {/* Technologies Card */}
-              <section className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200">
-                <div className="flex flex-wrap gap-2 justify-center">
+              <section className="techn p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200">
+                <div className="techno flex flex-wrap gap-2 justify-center">
                   {projectByUrl.tech.map((logo, index) => (
                     <Image 
                       key={index} 
@@ -83,17 +75,17 @@ const ProjPage = () => {
                 href={projectByUrl.github_link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center"
+                className="github p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center"
               >
-                <div className="flex items-center">
+                <div className="github2 flex items-center">
                   <Image 
                     src="/github.svg" 
                     alt="GitHub repository"
-                    className="w-8 h-8 mr-3" 
+                    className="github-image w-8 h-8 mr-3" 
                     width={32}
                     height={32}
                   />
-                  <span className="text-lg font-bold">View Code</span>
+                  <span className="github-text text-lg font-bold">View Code</span>
                 </div>
               </a>
             </div>
@@ -109,24 +101,24 @@ const ProjPage = () => {
                 <Image 
                   src="/figma.png" 
                   alt="Figma logo"
-                  className="w-5 h-5 mr-2"
+                  className="figma-logo w-5 h-5 mr-2"
                   width={20}
                   height={20}
                 />
-                <h2 className="text-xl font-bold">Figma</h2>
+                <h2 className="figma-text text-xl font-bold">Figma</h2>
               </div>
               <Image 
                 src={projectByUrl.figma_image} 
                 alt="Figma design preview"
-                className="w-full h-auto rounded-lg mt-2 object-cover"
-                width={500}
-                height={300}
+                className="figma-screen w-full h-auto rounded-lg mt-2 object-cover"
+                width={1920}
+                height={1080}
                 layout="responsive"
               />
             </a>
           </div>
 
-          <div className="mt-6 mx-auto w-full mb-20 max-w-[75%]">
+          <div className="mockups mt-6 mx-auto mb-20 w-[75%]">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
               {projectByUrl.mockups.map((mockup, index) => (
                 <div key={index} className="flex justify-center">
@@ -146,6 +138,83 @@ const ProjPage = () => {
       ) : (
         <span className="text-red-500">Project not found!</span>
       )}
+      <style jsx>{`
+        .project-title {
+          font-size: 1.5rem; /* Default font size */
+        }
+        
+        @media (max-width: 770px) {
+          .title-bg {
+            width: 80%;
+          }
+          .project-image {
+          width: 80%;  
+          margin-top: 2vh;
+          }
+          .cards {
+            margin-top: 2vh;
+            width: 80%;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .project-title {
+            font-size: 1rem; /* Smaller font size under 500px */
+
+          }
+          .title-bg {
+            height: 5vh;
+            padding: 0rem;
+            margin-top: 2rem;
+            width: 90%;
+          }
+          .project-image {
+            margin-top: 2vh;
+            width: 90%;
+          }
+          .cards {
+            margin-top: 2vh;
+            width: 90%;
+            gap: 0.5rem;
+          }
+          .cards2 {
+            gap: 0.5rem;
+          }
+          .description-section {
+            padding-top: 0.5rem;
+          }
+          .description-title {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+          }
+          .description {
+            font-size: 0.9rem;
+          }
+          .techn {
+            padding: 0.7rem;
+          }
+          .github {
+            height: 7vh;
+          }
+          .github-image {
+            height: 10px;
+            width: 10px;
+          }
+          .github-text {
+            font-size: 1rem;
+          }
+          .figma-logo {
+            height: 1rem;
+            width: 1rem
+          }
+          .figma-text {
+            font-size: 1rem;
+          }
+          .mockups {
+            width: 90%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

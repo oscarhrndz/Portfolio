@@ -11,7 +11,8 @@ const Page = () => {
         backgroundPosition: 'center',
       }}
     >
-      <div className="h-[40%] w-[70%] rounded-xl flex items-center justify-center"> {/* Added a semi-transparent white background for better readability */}
+      <div className="h-[40%] w-[80%] rounded-xl flex items-center justify-center mt-20 lg:mt-0">
+        {/* Set default top margin of mt-20 and increased margin on larger screens */}
         <ContactForm /> {/* Render the ContactForm component */}
       </div>
     </div>

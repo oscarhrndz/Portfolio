@@ -3,9 +3,6 @@ import { NavLinks } from '@/constants';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface NavigationProps {
-    isMobile: boolean; // Define the prop type for isMobile
-}
 
 const Navigation = () => {
     const path = usePathname();
