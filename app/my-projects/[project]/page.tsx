@@ -28,8 +28,8 @@ const ProjPage: React.FC = () => {
         <span className="text-gray-200">Loading...</span> // Loading indicator
       ) : projectByUrl ? (
         <div 
-          className="w-full overflow-y-scroll mx-20" 
-          style={{ maxHeight: 'calc(105vh)' }}
+          className="projects-bottom w-full overflow-y-scroll mx-20 pb-0" 
+          style={{ maxHeight: 'calc(100vh)' }}
         >
           <header className="title-bg relative font-bold text-center mt-14 mx-auto p-2 rounded-lg shadow-md flex bg-[#2d2d2d] text-white w-[75%] items-center justify-center">
             <h1 className='project-title text-2xl'>{projectByUrl.title}</h1>
@@ -213,6 +213,10 @@ const ProjPage: React.FC = () => {
           }
           .mockups {
             width: 90%;
+          }
+          .project-bottom {
+          
+            
           }
         }
       `}</style>
