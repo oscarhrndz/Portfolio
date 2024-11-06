@@ -80,7 +80,7 @@ export const Socials = [
   {
     name: "Github",
     src: "/github.svg",
-    link: "https://github.com/oscarhrndz/Portfolio",
+    link: "https://github.com/oscarhrndz",
   },
   {
     name: "Telegram",
