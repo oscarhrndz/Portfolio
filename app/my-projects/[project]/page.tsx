@@ -1,11 +1,13 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import { Projects } from "@/constants";
 import { usePathname } from "next/navigation";
 import { ProjectCardProps } from '@/components/ProjectCard';
 
 const ProjPage: React.FC = () => {
+  const router = useRouter(); // Initialize router for navigation
   const params = usePathname().split('/')[2];
   const [projectByUrl, setProject] = useState<ProjectCardProps | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true); // Loading state
@@ -23,6 +25,7 @@ const ProjPage: React.FC = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
+      
       {loading ? (
         <span className="text-gray-200">Loading...</span> // Loading indicator
       ) : projectByUrl ? (
