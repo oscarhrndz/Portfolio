@@ -143,7 +143,7 @@ const ContactForm = () => {
             font-size: 1rem;
           }
           .information {
-            padding-bottom: 5vh;
+            padding-bottom: 10vh;
           }
         }
       `}</style>

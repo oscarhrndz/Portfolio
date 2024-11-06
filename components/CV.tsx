@@ -56,7 +56,7 @@ const Cvs = () => {
                 @media (max-width: 768px) {
                     div {
                         width: 20vw; /* Full width for mobile */
-                        height: 6vh; /* Adjust height for mobile */
+                        height: 5vh; /* Adjust height for mobile */
                         padding-top: 0vh;
                         top: 2.5%; /* Position at the bottom */
                         left: 3%; /* Align to the left */
@@ -64,7 +64,7 @@ const Cvs = () => {
                         justify-content: space-around; /* Space links evenly */
                         max-height: 9vh;
                         max-width: 10vw;
-                        min-height: 4vw;
+                        min-height: 4vh;
 
                         background-color: #1a1a1a; /* Change background for mobile */
                     }

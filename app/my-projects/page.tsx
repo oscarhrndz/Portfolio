@@ -74,7 +74,8 @@ const Page: React.FC = () => {
             margin-bottom: 20px; // Adjust margin for smaller screens
           }
           .space-bottom {
-            padding-bottom: 10vh;
+            padding-top: 10vh;
+            padding-bottom: 20vh;
           }
         }
       `}</style>

@@ -35,8 +35,9 @@ const SplineComponent = () => {
         /* Adjustments for very small screens, like phones */
         @media (max-width: 480px) {
           .spline-container {
-            width: 95vw;
-            height: 60vh;
+            margin-top: 7vh;
+            width: 90%;
+            height: 90%;
           }
         }
       `}</style>
