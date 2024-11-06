@@ -20,22 +20,32 @@ const SplineComponent = () => {
           transition: all 0.3s ease;
         }
 
+        @media (max-width: 1050px) {
+          .spline-container {
+            position: absolute;
+            top: 57%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+          }
+        }
+
         /* Responsive adjustments for smaller screens */
         @media (max-width: 768px) {
           .spline-container {
             position: absolute;
-            top: 50%;
+            top: 57%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90vw;
-            height: 70vh;
+            width: 90%;
+            height: 90%;
           }
         }
 
         /* Adjustments for very small screens, like phones */
         @media (max-width: 480px) {
           .spline-container {
-            margin-top: 7vh;
             width: 90%;
             height: 90%;
           }
