@@ -30,7 +30,7 @@ const Page = () => {
       {/* Main content with ContactForm, rendered only after page load */}
       {isPageLoaded && (
         <div
-          className="w-screen h-screen flex items-center justify-center"
+          className="w-screen h-screen flex items-center justify-center bg-[#1a1a1a]"
           style={{
             backgroundImage: 'url(/bg/bg_contact.jpg)',
             backgroundSize: 'cover',
