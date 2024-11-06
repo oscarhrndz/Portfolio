@@ -16,7 +16,7 @@ const Page: React.FC = () => {
       {/* Full-width, scrollable container */}
       <div className='w-full h-full overflow-y-auto'> 
         {/* Inner content container for project cards */}
-        <div className='pt-14 pb-4'
+        <div className='space-bottom pt-14 pb-4'
           > {/* Adjusted to center content and add padding */}
           <div className='flex flex-col gap-14'>
             {Projects.reduce((acc: JSX.Element[], project, index) => {
@@ -72,6 +72,9 @@ const Page: React.FC = () => {
           }
           .mb-10 {
             margin-bottom: 20px; // Adjust margin for smaller screens
+          }
+          .space-bottom {
+            padding-bottom: 10vh;
           }
         }
       `}</style>

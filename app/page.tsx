@@ -27,7 +27,7 @@ export default function Home() {
             height: '25vh', 
             marginLeft: '0.5vw', 
             color: 'white', 
-            imgMarginTop: '14.5vh', 
+            imgMarginTop: '15.5vh', 
             imgMarginBottom: '0vh', 
             textMarginTop: '2.5vh', 
             textMarginBottom: '6vh'

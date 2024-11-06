@@ -40,10 +40,7 @@ const Navigation = () => {
                         border-radius: 0; /* Remove rounded corners for mobile */
                     }
 
-                    .mb-6 {
-                        margin-bottom: 0; /* Remove vertical margin for mobile */
-                        margin-right: 1rem; /* Add margin for horizontal layout */
-                    }
+                    
                 }
             `}</style>
         </div>

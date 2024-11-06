@@ -110,7 +110,7 @@ const ContactForm = () => {
       </form>
 
       {/* Contact details move below form on smaller screens */}
-      <div className="flex flex-col items-start w-full lg:w-[35%] text-gray-200">
+      <div className="information flex flex-col items-start w-full lg:w-[35%] text-gray-200 pb-0">
         <div className="mb-6 text-left">
           <p className="title-contact text-base text-gray-500">Email</p>
           <p className="data-contact text-xl font-semibold border-b border-gray-100 pb-1">oscarhernandezsoler@gmail.com</p>
@@ -141,6 +141,9 @@ const ContactForm = () => {
           }
           .data-contact {
             font-size: 1rem;
+          }
+          .information {
+            padding-bottom: 5vh;
           }
         }
       `}</style>

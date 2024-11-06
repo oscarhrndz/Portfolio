@@ -9,7 +9,7 @@ const Navbar = () => {
   const [showSocials, setShowSocials] = useState(false);
 
   return (
-    <div className="fixed z-[50] flex flex-col items-center gap-4 py-2 px-4 rounded-lg top-4 right-4 bg-[#1a1a1a] md:bottom-14 md:w-[5.1vw] md:max-w-[6rem] md:left-[3.6vw] md:top-auto md:right-auto">
+    <div className="fixed z-[40] flex flex-col items-center gap-4 py-2 px-4 rounded-lg top-4 right-4 bg-[#1a1a1a] md:bottom-14 md:w-[5.1vw] md:max-w-[6rem] md:left-[3.6vw] md:top-auto md:right-auto">
       {/* Toggle button for small screens */}
       <button
         className="md:hidden relative flex justify-center items-center transition-opacity duration-300"
@@ -41,7 +41,7 @@ const Navbar = () => {
       <div
         className={`flex-col items-center gap-4 ${
           showSocials ? "flex" : "hidden"
-        } md:flex mt-2`}
+        } md:flex mt-2 mb-2`}
       >
         {Socials.map((social) => (
           <a
