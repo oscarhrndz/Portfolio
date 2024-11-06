@@ -6,8 +6,16 @@ import { SkillData } from "@/constants";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
-// Helper function to shuffle an array
-const shuffleArray = (array: any[]) => {
+// Define the structure for a skill
+interface Skill {
+  name: string;
+  Image: string;
+  width: number;
+  height: number;
+}
+
+// Helper function to shuffle an array of Skill objects
+const shuffleArray = (array: Skill[]): Skill[] => {
   return array
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
@@ -49,11 +57,11 @@ const Page = () => {
           }}
           speed={5000}
           modules={[Autoplay]}
-          className="max-w-[90%]"
+          className="width-logos max-w-[80%]"
           spaceBetween={3} // Adds spacing between slides
         >
-          {shuffledSkills1.map((skill, index) => (
-            <SwiperSlide key={index} >
+          {shuffledSkills1.map((skill: Skill, index: number) => (
+            <SwiperSlide key={index}>
               <Image
                 src={skill.Image}
                 alt={skill.name}
@@ -75,10 +83,10 @@ const Page = () => {
           }}
           speed={5000}
           modules={[Autoplay]}
-          className="max-w-[90%]"
+          className="width-logos max-w-[80%]"
           spaceBetween={3} // Adds spacing between slides
         >
-          {shuffledSkills2.map((skill, index) => (
+          {shuffledSkills2.map((skill: Skill, index: number) => (
             <SwiperSlide key={index}>
               <Image
                 src={skill.Image}
@@ -90,6 +98,8 @@ const Page = () => {
           ))}
         </Swiper>
       </div>
+
+      
     </div>
   );
 };
