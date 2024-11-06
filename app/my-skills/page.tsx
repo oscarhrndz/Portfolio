@@ -6,14 +6,25 @@ import { SkillData } from "@/constants";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
+// Helper function to shuffle an array
+const shuffleArray = (array: any[]) => {
+  return array
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+};
+
 const Page = () => {
+  const shuffledSkills1 = shuffleArray([...SkillData]);
+  const shuffledSkills2 = shuffleArray([...SkillData]);
+
   return (
     <div
-    style={{
-      backgroundImage: 'url(/bg/bg_skills.jpg)', // Use string directly if in public
-      backgroundSize: 'cover',
-      backgroundPosition: '30% 70%',
-    }} // Set background color to white
+      style={{
+        backgroundImage: 'url(/bg/bg_skills.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: '30% 70%',
+      }}
       className="background-skill h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
     >
       <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
@@ -26,8 +37,9 @@ const Page = () => {
             </span>
             Technologies
           </h1>
-          
         </div>
+
+        {/* First Swiper with shuffled images */}
         <Swiper
           slidesPerView={5}
           loop={true}
@@ -37,10 +49,11 @@ const Page = () => {
           }}
           speed={5000}
           modules={[Autoplay]}
-          className="max-w-[80%]"
+          className="max-w-[90%]"
+          spaceBetween={3} // Adds spacing between slides
         >
-          {SkillData.map((skill, index) => (
-            <SwiperSlide key={index}>
+          {shuffledSkills1.map((skill, index) => (
+            <SwiperSlide key={index} >
               <Image
                 src={skill.Image}
                 alt={skill.name}
@@ -50,6 +63,8 @@ const Page = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Second Swiper with a differently shuffled set */}
         <Swiper
           slidesPerView={5}
           loop={true}
@@ -60,9 +75,10 @@ const Page = () => {
           }}
           speed={5000}
           modules={[Autoplay]}
-          className="max-w-[80%]"
+          className="max-w-[90%]"
+          spaceBetween={3} // Adds spacing between slides
         >
-          {SkillData.map((skill, index) => (
+          {shuffledSkills2.map((skill, index) => (
             <SwiperSlide key={index}>
               <Image
                 src={skill.Image}
