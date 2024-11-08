@@ -35,7 +35,7 @@ const ContactForm = () => {
 
   return (
     <div
-      className="form-complete p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full mx-auto -mt-0 lg:mt-5"
+      className="form-complete p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full mx-auto -mt-0 lg:mt-5 ml-5"
       style={{
         background: 'rgba(0, 0, 0, 0.4)',
         minHeight: '90vh',
@@ -124,6 +124,7 @@ const ContactForm = () => {
         @media (max-width: 1024px) {
           .form-complete {
             margin-top: 0vh;
+            margin-left: 0vh;
           }
           .title-form {
             font-size: 1.3rem;

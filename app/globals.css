@@ -15,14 +15,26 @@ body {
   font-family: 'Host Grotesk', sans-serif;
 }
 
-
-
-
 /* globals.css or a specific CSS module */
 
+.font-semibold {
+  font-family: 'Host Grotesk', cursive;
+}
+
+.font-change {
+  font-family: 'Host Grotesk', cursive;
+}
+
+.font-complete {
+  font-family: 'Host Grotesk', cursive;
+}
 
 
 .extra-margin {
+  margin: 0 2vw; /* Add any additional margins you want */
+}
+
+.form-margin {
   margin: 0 2vw; /* Add any additional margins you want */
 }
 

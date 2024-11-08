@@ -36,9 +36,9 @@ const Cvs = () => {
                         key={cv.name}
                         href={cv.href}
                         download
-                        className="text-white block m-0 pb-2 h-[2.5rem] leading-6 text-center md:text-sm text-[10px]"
+                        className="font-change text-white block m-0 pb-2 h-[2.5rem] leading-6 text-center md:text-sm text-[10px]"
                         style={{
-                            padding: '0.5rem 0',
+                            padding: '0.6rem 0',
                             transition: 'opacity 0.3s ease', // Smooth transition for opacity
                         }}
                     >
