@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useLayoutEffect, useState } from 'react';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Navigation from '@/components/Navigation';
@@ -13,7 +12,6 @@ import LoadingIndicator from '@/components/LoadingIndicator'; // Import the load
 import Transition from '@/components/Transition';
 import useDeviceSize from "./hook"
 
-const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
