@@ -17,15 +17,9 @@ body {
 
 /* globals.css or a specific CSS module */
 
-.font-semibold {
-  font-family: 'Host Grotesk', cursive;
-}
 
-.font-change {
-  font-family: 'Host Grotesk', cursive;
-}
 
-.font-complete {
+.project {
   font-family: 'Host Grotesk', cursive;
 }
 

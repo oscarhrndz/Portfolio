@@ -73,50 +73,52 @@ const ProjPage: React.FC = () => {
 
               {/* GitHub Card */}
               <a 
-                href={projectByUrl.github_link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="github p-4 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center"
-              >
-                <div className="github2 flex items-center">
-                  <Image 
-                    src="/github.svg" 
-                    alt="GitHub repository"
-                    className="github-image w-8 h-8 mr-3" 
-                    width={32}
-                    height={32}
-                  />
-                  <span className="github-text text-lg font-bold">View Code</span>
-                </div>
-              </a>
+  href={projectByUrl.github_link} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="github p-3 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"
+>
+  <div className="github2 flex items-center">
+    <Image 
+      src="/github-mark-white.svg" 
+      alt="GitHub repository"
+      className="github-image w-9 h-9 mr-3  transition-colors duration-300 hover:filter hover:invert" 
+      width={132}
+      height={132}
+    />
+    <span className="github-text text-lg font-bold">View Code</span>
+  </div>
+</a>
+
             </div>
 
             {/* Figma Card */}
             <a 
-              href={projectByUrl.figma_url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block h-full md:mt-4 lg:mt-0"
-            >
-              <div className="flex items-center mb-2">
-                <Image 
-                  src="/figma.png" 
-                  alt="Figma logo"
-                  className="figma-logo w-5 h-5 mr-2"
-                  width={20}
-                  height={20}
-                />
-                <h2 className="figma-text text-xl font-bold">Figma</h2>
-              </div>
-              <Image 
-                src={projectByUrl?.figma_image || ""} 
-                alt="Figma design preview"
-                className="figma-screen w-full h-auto rounded-lg mt-2 object-cover"
-                width={1920}
-                height={1080}
-                layout="responsive"
-              />
-            </a>
+  href={projectByUrl.figma_url} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block h-full md:mt-4 lg:mt-0 hover:bg-white hover:text-black transition-all duration-300"
+>
+  <div className="flex items-center mb-2">
+    <Image 
+      src="/figma.png" 
+      alt="Figma logo"
+      className="figma-logo w-5 h-5 mr-2"
+      width={20}
+      height={20}
+    />
+    <h2 className="figma-text text-xl font-bold">Figma</h2>
+  </div>
+  <Image 
+    src={projectByUrl?.figma_image || ""} 
+    alt="Figma design preview"
+    className="figma-screen w-full h-auto rounded-lg mt-2 object-cover"
+    width={1920}
+    height={1080}
+    layout="responsive"
+  />
+</a>
+
           </div>
 
           <div className="mockups mt-6 mx-auto mb-20 w-[75%]">

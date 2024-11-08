@@ -44,7 +44,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="font-project">
         {/* Show loading indicator while the page is loading */}
         {!isPageLoaded && <LoadingIndicator />}
 
