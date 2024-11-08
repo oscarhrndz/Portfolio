@@ -53,8 +53,8 @@ const Navbar = () => {
             <Image
               src={social.src}
               alt={social.name}
-              width={24}
-              height={24}
+              width={100}
+              height={100}
               className="w-6 h-6 my-1"
             />
           </a>

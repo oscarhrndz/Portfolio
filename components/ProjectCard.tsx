@@ -9,11 +9,11 @@ export interface ProjectCardProps {
   src: string;
   url?: string;
   tech: string[]; // Add tech property for technology logos
-  figma_image: string;
+  figma_image?: string;
   mockups: string[];
   description: string;
   github_link: string;
-  figma_url: string;
+  figma_url?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }) => {

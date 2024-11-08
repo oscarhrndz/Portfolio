@@ -6,7 +6,6 @@ import { SkillData } from "@/constants";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
-// Define the structure for a skill
 interface Skill {
   name: string;
   Image: string;
@@ -14,7 +13,6 @@ interface Skill {
   height: number;
 }
 
-// Helper function to shuffle an array of Skill objects
 const shuffleArray = (array: Skill[]): Skill[] => {
   return array
     .map((value) => ({ value, sort: Math.random() }))
@@ -28,7 +26,6 @@ const Page = () => {
   const shuffledSkills2 = shuffleArray([...SkillData]);
 
   useEffect(() => {
-    // Set loading to false once the component has mounted
     setLoading(false);
   }, []);
 
@@ -37,17 +34,19 @@ const Page = () => {
       style={{
         backgroundImage: 'url(/bg/bg_skills.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: '30% 70%',
+        backgroundPosition: '30% 80%',
       }}
-      className="background-skill h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center"
+      className="background-skill h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center relative"
     >
+      {/* Dark overlay to decrease brightness */}
+      <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
+
       {loading ? (
-        // Loading Indicator (replace with your preferred loading component)
-        <div className="flex items-center justify-center h-full">
-          <div className="loader">Loading...</div> {/* Replace this with your LoadingIndicator component */}
+        <div className="flex items-center justify-center h-full z-10">
+          <div className="loader">Loading...</div>
         </div>
       ) : (
-        <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
+        <div className="flex flex-col gap-28 max-w-[80%] text-center items-center z-10">
           <div className="flex flex-col items-center gap-4 pt-5">
             <h1 className="font-semibold text-white text-[50px]">
               Skills{" "}
@@ -59,7 +58,6 @@ const Page = () => {
             </h1>
           </div>
 
-          {/* First Swiper with shuffled images */}
           <Swiper
             slidesPerView={5}
             loop={true}
@@ -70,7 +68,7 @@ const Page = () => {
             speed={5000}
             modules={[Autoplay]}
             className="width-logos max-w-[80%]"
-            spaceBetween={3} // Adds spacing between slides
+            spaceBetween={3}
           >
             {shuffledSkills1.map((skill: Skill, index: number) => (
               <SwiperSlide key={index}>
@@ -84,7 +82,6 @@ const Page = () => {
             ))}
           </Swiper>
 
-          {/* Second Swiper with a differently shuffled set */}
           <Swiper
             slidesPerView={5}
             loop={true}
@@ -96,7 +93,7 @@ const Page = () => {
             speed={5000}
             modules={[Autoplay]}
             className="width-logos max-w-[80%]"
-            spaceBetween={3} // Adds spacing between slides
+            spaceBetween={3}
           >
             {shuffledSkills2.map((skill: Skill, index: number) => (
               <SwiperSlide key={index}>

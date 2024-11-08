@@ -3,21 +3,17 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Tomatoes';
-  src: url('/fonts/Tomatoes-O8L8.ttf') format('sans-serif');
-  font-weight: normal;
+  font-family: 'Host Grotesk';
+  src: url('/HostGrotesk-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
 }
 
 body {
   overflow: hidden; 
   background-color: #1a1a1a;
+  font-family: 'Host Grotesk', sans-serif;
 }
-
-div {
-  font-family: 'FuturaPTlight';
-}
-
 
 
 
@@ -31,7 +27,7 @@ div {
 }
 
 .static-text {
-  font-family: 'Segoe Script', cursive;
+  font-family: 'Host Grotesk', cursive;
   
   color: white;
 }

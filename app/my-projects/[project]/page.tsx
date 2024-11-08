@@ -17,7 +17,7 @@ const ProjPage: React.FC = () => {
   }, [params]);
 
   return (
-    <div className="h-full flex flex-col justify-start items-center"
+    <div className="project-text h-full flex flex-col justify-start items-center"
       style={{
         backgroundImage: 'url(/bg/bg_project.jpg)',
         backgroundSize: 'cover',
@@ -109,7 +109,7 @@ const ProjPage: React.FC = () => {
                 <h2 className="figma-text text-xl font-bold">Figma</h2>
               </div>
               <Image 
-                src={projectByUrl.figma_image} 
+                src={projectByUrl?.figma_image || ""} 
                 alt="Figma design preview"
                 className="figma-screen w-full h-auto rounded-lg mt-2 object-cover"
                 width={1920}

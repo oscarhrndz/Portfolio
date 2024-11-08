@@ -55,7 +55,7 @@ const ContactForm = () => {
       }}
     >
       <form onSubmit={sendEmail} className="w-full lg:w-[45%] mb-8 lg:mb-0">
-        <h1 className="title-form text-2xl font-thin mb-5 text-gray-50">
+        <h1 className="title-form text-3xl mb-5 text-gray-50 font-bold">
           LET&apos;S <span className="text-3xl font-bold text-purple-800">CONNECT</span> AND <span className="text-3xl font-bold text-purple-800">WORK</span> TOGETHER
         </h1>
         <div className="mb-4">
@@ -110,18 +110,18 @@ const ContactForm = () => {
       </form>
 
       {/* Contact details move below form on smaller screens */}
-      <div className="information flex flex-col items-start w-full lg:w-[35%] text-gray-200 pb-0">
-        <div className="mb-6 text-left">
+      <div className="information flex flex-col items-start w-full lg:w-[35%] text-white pb-0">
+        <div className="margin-move pt-80 text-left">
           <p className="title-contact text-base text-gray-500">Email</p>
-          <p className="data-contact text-xl font-semibold border-b border-gray-100 pb-1">oscarhernandezsoler@gmail.com</p>
+          <p className="data-contact text-lg font-semibold border-b border-gray-100 pb-1">oscarhernandezsoler@gmail.com</p>
         </div>
-        <div className="text-left">
+        <div className="margin-move text-left pt-8">
           <p className="title-contact text-base text-gray-500">Phone number</p>
-          <p className="data-contact text-xl font-semibold border-b border-gray-400 pb-1">+34 646041002</p>
+          <p className="data-contact text-lg font-semibold border-b border-gray-400 pb-1">+34 646041002</p>
         </div>
       </div>
       <style jsx>{`
-        @media (max-width: 500px) {
+        @media (max-width: 1024px) {
           .form-complete {
             margin-top: 0vh;
           }
@@ -141,12 +141,19 @@ const ContactForm = () => {
           }
           .title-contact {
             font-size: 0.8rem; /* Smaller font size under 500px */
+            padding-top: 0vh;
           }
           .data-contact {
             font-size: 1rem;
+            padding-top: 0vh;
           }
           .information {
-            padding-bottom: 10vh;
+            padding-bottom: 0vh;
+            padding-top: 0rem;
+          }
+          .margin-move {
+            padding-top: 0vh;
+            padding-bottom: 0rem;
           }
         }
       `}</style>

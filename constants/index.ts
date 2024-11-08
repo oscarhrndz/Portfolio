@@ -79,7 +79,7 @@ export const SkillData = [
 export const Socials = [
   {
     name: "Github",
-    src: "/github.svg",
+    src: "/gatuli.svg",
     link: "https://github.com/oscarhrndz",
   },
   {
@@ -123,6 +123,18 @@ export const Projects = [
     tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
     figma_image: '/rentalcar/figma.png',
     figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=16-2',
+    mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
+    github_link: 'https://github.com/oscarhrndz/rental_car'
+  },
+  {
+    id: 3,
+    title: "Rental Car",
+    text: "Modern and minimalist Renting Car Application. Differents cars, users and places can be chosen.",
+    src: "/rentalcar/showcase.png",
+    url: "rental_car23",
+    description: "The Rental Car application is designed to simplify the process of renting cars. Users can easily browse and compare various car models based on important details such as price, mileage, features, and specifications. Additionally, the application provides information about the car's owner and its location.",
+    tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
+    
     mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
     github_link: 'https://github.com/oscarhrndz/rental_car'
   },
