@@ -149,7 +149,7 @@ const ContactForm = () => {
             padding-top: 0vh;
           }
           .information {
-            padding-bottom: 0vh;
+            padding-bottom: 15vh;
             padding-top: 0rem;
           }
           .margin-move {

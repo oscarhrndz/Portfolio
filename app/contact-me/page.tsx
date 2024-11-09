@@ -37,7 +37,7 @@ const Page = () => {
             backgroundPosition: 'center',
           }}
         >
-          <div className="h-[40%] w-[80%] ml-0 rounded-xl flex items-center justify-center mt-0 lg:mt-0">
+          <div className="h-[40%] w-[80%] ml-0 rounded-xl flex items-center justify-center mb-0 lg:mt-0">
             <ContactForm />
           </div>
         </div>
