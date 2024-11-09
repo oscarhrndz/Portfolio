@@ -3,7 +3,6 @@ import { NavLinks } from '@/constants';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-
 const Navigation = () => {
     const path = usePathname();
 
@@ -15,11 +14,13 @@ const Navigation = () => {
                 <Link
                     key={nav.name}
                     href={nav.link}
-                    className="mb-3 mt-3" // Default margin for larger screens
+                    className="mb-3 mt-3"
                 >
                     <nav.icon
-                        className={`w-6 h-6 ${
-                            path === nav.link ? "text-purple-800" : "text-white"
+                        className={`w-6 h-6 transition-transform duration-300 ${
+                            path === nav.link
+                                ? "text-purple-800 scale-125"  // Apply purple color and enlarge if active
+                                : "text-white hover:scale-125" // Regular size with hover scale for others
                         }`}
                     />
                 </Link>
@@ -29,18 +30,16 @@ const Navigation = () => {
                 /* Styles for small screens */
                 @media (max-width: 768px) {
                     div {
-                        width: 100%; /* Full width for mobile */
-                        height: 6vh; /* Adjust height for mobile */
-                        bottom: 0; /* Position at the bottom */
-                        left: 0; /* Align to the left */
-                        flex-direction: row; /* Change to horizontal layout */
-                        justify-content: space-around; /* Space links evenly */
-                        padding: 0; /* Remove padding for mobile */
-                        background-color: #1a1a1a; /* Change background for mobile */
-                        border-radius: 0; /* Remove rounded corners for mobile */
+                        width: 100%;
+                        height: 6vh;
+                        bottom: 0;
+                        left: 0;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        padding: 0;
+                        background-color: #1a1a1a;
+                        border-radius: 0;
                     }
-
-                    
                 }
             `}</style>
         </div>

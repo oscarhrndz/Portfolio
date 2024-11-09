@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Socials } from "@/constants";
-import { FiMenu, FiX } from "react-icons/fi"; // Import both icons
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [showSocials, setShowSocials] = useState(false);
@@ -15,9 +15,7 @@ const Navbar = () => {
         className="md:hidden relative flex justify-center items-center transition-opacity duration-300"
         onClick={() => setShowSocials(!showSocials)}
       >
-        {/* Icon container */}
         <div className="relative w-6 h-6">
-          {/* FiMenu icon */}
           <FiMenu
             size={24}
             className={`text-white transition-opacity duration-300 absolute inset-0 ${
@@ -25,8 +23,6 @@ const Navbar = () => {
             }`}
             style={{ transitionDelay: showSocials ? "0ms" : "150ms" }}
           />
-
-          {/* FiX icon */}
           <FiX
             size={24}
             className={`text-white transition-opacity duration-300 absolute inset-0 ${
@@ -55,20 +51,11 @@ const Navbar = () => {
               alt={social.name}
               width={100}
               height={100}
-              className="w-6 h-6 my-1"
+              className="w-6 h-6 my-1 transition-transform duration-300 hover:scale-125"
             />
           </a>
         ))}
       </div>
-
-      {/* Styles for small screens */}
-      <style jsx>{`
-        @media (max-width: 500px) {
-          div {
-            
-          }
-        }
-      `}</style>
     </div>
   );
 };

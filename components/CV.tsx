@@ -35,7 +35,7 @@ const Cvs = () => {
                         key={cv.name}
                         href={cv.href}
                         download
-                        className="cv-button font-change text-white flex items-center justify-center rounded-lg border border-white bg-[#1a1a1a] transition-all duration-300 hover:bg-white hover:text-black hover:font-bold"
+                        className="cv-button font-change text-white flex items-center justify-center rounded-lg border border-[#dcb800] bg-[#1a1a1a] transition-all duration-300 hover:bg-[#303030] hover:text-[#927b00] hover:font-bold"
                     >
                         <span className="text-center md:text-sm text-[10px]">{cv.name}</span>
                     </a>
@@ -56,8 +56,8 @@ const Cvs = () => {
 
                 .cv-button:hover {
                     transform: scale(1.35); /* Apply a larger hover scale */
-                    background-color: white; /* Color transition */
-                    color: black;
+                    background-color: #303030; /* Color transition */
+                    color: #dcb800;
                 }
                 
                 @media (max-width: 768px) {

@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
   return (
     <Link href={`my-projects/${url}`}>
       <div
-        className="group project-card rounded-lg shadow-md overflow-hidden bg-[#1a1a1a] w-[36vw] h-[65vh] flex flex-col transition-colors duration-300 hover:bg-[#fbfcfc]"
+        className="group project-card rounded-lg shadow-md overflow-hidden bg-[#1a1a1a] w-[36vw] h-[65vh] flex flex-col transition-transform duration-300 transform hover:scale-105 hover:bg-[#282828]"
       >
         {/* Set a fixed height for the image */}
         <Image 
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
         <div className="p-4 flex-grow flex flex-col">
           <div className="flex items-center justify-between mb-2">
             {/* Title */}
-            <h3 className="text-xl font-semibold text-white group-hover:text-black transition-colors duration-300">
+            <h3 className="text-xl font-semibold text-white transition-colors duration-300">
               {title}
             </h3>
             
@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
           </div>
 
           {/* Description Text */}
-          <p className="text-gray-400 flex-grow overflow-hidden group-hover:text-black transition-colors duration-300">
+          <p className="text-gray-400 flex-grow overflow-hidden transition-colors duration-300">
             {text}
           </p>
         </div>

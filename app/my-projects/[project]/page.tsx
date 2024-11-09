@@ -86,7 +86,7 @@ const ProjPage: React.FC = () => {
       width={132}
       height={132}
     />
-    <span className="github-text text-lg font-bold group-hover:text-black transition-colors duration-300">
+    <span className="github-text text-lg font-bold group-hover:text-black transition-colors duration-0">
       View Code
     </span>
   </div>
