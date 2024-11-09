@@ -76,19 +76,22 @@ const ProjPage: React.FC = () => {
   href={projectByUrl.github_link} 
   target="_blank" 
   rel="noopener noreferrer" 
-  className="github p-3 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"
+  className="group github p-3 bg-[#1a1a1a] rounded-lg shadow-md text-gray-200 flex flex-col items-center justify-center transition-colors duration-300 hover:bg-[#fbfcfc] hover:text-black"
 >
   <div className="github2 flex items-center">
     <Image 
       src="/github-mark-white.svg" 
       alt="GitHub repository"
-      className="github-image w-9 h-9 mr-3  transition-colors duration-300 hover:filter hover:invert" 
+      className="github-image w-9 h-9 mr-3 transition-colors duration-300 group-hover:filter group-hover:invert" 
       width={132}
       height={132}
     />
-    <span className="github-text text-lg font-bold">View Code</span>
+    <span className="github-text text-lg font-bold group-hover:text-black transition-colors duration-300">
+      View Code
+    </span>
   </div>
 </a>
+
 
             </div>
 
@@ -97,7 +100,7 @@ const ProjPage: React.FC = () => {
   href={projectByUrl.figma_url} 
   target="_blank" 
   rel="noopener noreferrer"
-  className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block h-full md:mt-4 lg:mt-0 hover:bg-white hover:text-black transition-all duration-300"
+  className="flex-1 text-gray-200 p-4 bg-[#1a1a1a] rounded-lg shadow-md block h-full md:mt-4 lg:mt-0 hover:bg-[#fbfcfc] hover:text-black transition-all duration-300"
 >
   <div className="flex items-center mb-2">
     <Image 

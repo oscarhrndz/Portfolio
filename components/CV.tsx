@@ -24,11 +24,10 @@ const Cvs = () => {
 
             return () => clearTimeout(timeout);
         }
-    }, [isRouting, path]); // Add path as a dependency here
+    }, [isRouting, path]);
 
     return (
-        <div
-            className="fixed z-[50] justify-center items-center gap-2 rounded-lg border border-white overflow-hidden p-2 md:w-[5.1vw] h-[8.6vh] bg-[#1a1a1a] left-[3.6vw] bottom-[44.5vh] md:p-[0.6rem]">
+        <div className="fixed z-[50] left-[3.6vw] bottom-[44.5vh]">
             {isRouting && <Transition />}
             {CV.length > 0 ? (
                 CV.map((cv) => (
@@ -36,37 +35,49 @@ const Cvs = () => {
                         key={cv.name}
                         href={cv.href}
                         download
-                        className="font-change text-white block m-0 pb-2 h-[2.5rem] leading-6 text-center md:text-sm text-[10px]"
-                        style={{
-                            padding: '0.6rem 0',
-                            transition: 'opacity 0.3s ease', // Smooth transition for opacity
-                        }}
+                        className="cv-button font-change text-white flex items-center justify-center rounded-lg border border-white bg-[#1a1a1a] transition-all duration-300 hover:bg-white hover:text-black hover:font-bold"
                     >
-                        {cv.name} {/* Display the CV name dynamically */}
+                        <span className="text-center md:text-sm text-[10px]">{cv.name}</span>
                     </a>
                 ))
             ) : (
-                <span className="text-white" style={{ lineHeight: '1.5', height: '2.5rem', display: 'flex', alignItems: 'center' }}>
+                <div className="flex items-center justify-center w-full h-full text-white">
                     Loading...
-                </span>
+                </div>
             )}
 
-<style jsx>{`
-                /* Styles for small screens */
+            <style jsx>{`
+                .cv-button {
+                    width: 5.1vw;
+                    height: 8.6vh;
+                    padding: 0.6rem 0;
+                    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+                }
+
+                .cv-button:hover {
+                    transform: scale(1.35); /* Apply a larger hover scale */
+                    background-color: white; /* Color transition */
+                    color: black;
+                }
+                
                 @media (max-width: 768px) {
+                    .cv-button {
+                        width: 15vw;
+                        height: 5.5vh;
+                        padding: 0.3rem 0;
+                        font-size: 0.8rem;
+                    }
                     div {
-                        width: 20vw; /* Full width for mobile */
-                        height: 5vh; /* Adjust height for mobile */
-                        padding-top: 0vh;
-                        top: 2.5%; /* Position at the bottom */
-                        left: 3%; /* Align to the left */
-                        flex-direction: row; /* Change to horizontal layout */
-                        justify-content: space-around; /* Space links evenly */
+                        width: 5vw;
+                        height: 4vh;
+                        top: 2.5%;
+                        left: 3%;
+                        flex-direction: row;
+                        justify-content: space-around;
                         max-height: 9vh;
                         max-width: 10vw;
                         min-height: 4vh;
-
-                        background-color: #1a1a1a; /* Change background for mobile */
+                        background-color: #1a1a1a;
                     }
                 }
             `}</style>

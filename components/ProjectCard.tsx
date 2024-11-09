@@ -8,7 +8,7 @@ export interface ProjectCardProps {
   text: string;
   src: string;
   url?: string;
-  tech: string[]; // Add tech property for technology logos
+  tech: string[];
   figma_image?: string;
   mockups: string[];
   description: string;
@@ -20,25 +20,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
   return (
     <Link href={`my-projects/${url}`}>
       <div
-        className="rounded-lg shadow-md overflow-hidden bg-white w-[36vw] h-[65vh] flex flex-col project-card" // Keep the same width and height
-        style={{
-          backgroundColor: '#1a1a1a',
-        }}
+        className="group project-card rounded-lg shadow-md overflow-hidden bg-[#1a1a1a] w-[36vw] h-[65vh] flex flex-col transition-colors duration-300 hover:bg-[#fbfcfc]"
       >
         {/* Set a fixed height for the image */}
         <Image 
           src={src} 
           alt={title} 
-          className="w-full h-[47vh] object-cover" // Fixed height for images
-          width={1920} // Placeholder width
-          height={1080} // Set the same height here
+          className="w-full h-[47vh] object-cover" 
+          width={1920} 
+          height={1080} 
         />
         
         {/* Container for the Title, Logos, and Description */}
         <div className="p-4 flex-grow flex flex-col">
           <div className="flex items-center justify-between mb-2">
             {/* Title */}
-            <h3 className="text-xl font-semibold text-white">{title}</h3>
+            <h3 className="text-xl font-semibold text-white group-hover:text-black transition-colors duration-300">
+              {title}
+            </h3>
             
             {/* Tech Logos */}
             <div className="flex space-x-2 tech-logos">
@@ -48,28 +47,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
                   src={logo} 
                   alt="Tech logo" 
                   className="h-7 w-7" 
-                  width={28} // Placeholder width
-                  height={28} // Placeholder height
+                  width={28} 
+                  height={28} 
                 />
               ))}
             </div>
           </div>
 
           {/* Description Text */}
-          <p className="text-gray-400 flex-grow overflow-hidden">{text}</p> {/* Fixed height for the text */}
+          <p className="text-gray-400 flex-grow overflow-hidden group-hover:text-black transition-colors duration-300">
+            {text}
+          </p>
         </div>
       </div>
 
       <style jsx>{`
         @media (max-width: 900px) {
           .project-card {
-            width: 80vw; // Set the width of the card for smaller screens
-            margin: 0 auto; // Center the card horizontally
+            width: 80vw;
+            margin: 0 auto;
           }
         }
         @media (max-width: 550px) {
           .tech-logos {
-            display: none; // Hide tech logos on small screens
+            display: none;
           }
         }
       `}</style>
