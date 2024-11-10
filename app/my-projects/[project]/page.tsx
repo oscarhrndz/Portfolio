@@ -43,10 +43,10 @@ const ProjPage: React.FC = () => {
 
           <button 
             onClick={() => router.back()} 
-            className="button-back absolute left-5 md:left-5 lg:left-11 top-7 md:top-11 z-0 text-white bg-[#282828] rounded-lg md:bg-inherit hover:text-gray-300 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110"
+            className="button-back absolute left-5 md:left-5 lg:left-11 top-7 sm:top-11 z-0 text-white bg-[#282828] rounded-lg md:bg-inherit hover:text-gray-200 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110"
             aria-label="Go back to the previous page"
           >
-        <AiOutlineLeft className="button-texture bg-none md:bg-white text-[20px] md:text-[14px] lg:text-[15px]" />
+        <AiOutlineLeft className="button-texture bg-none md:bg-white text-white hover:text-white text-[20px] md:text-[14px] lg:text-[15px]" />
             <span className="text-lg">Back</span>
           </button>
 
