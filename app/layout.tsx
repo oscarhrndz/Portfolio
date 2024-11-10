@@ -49,7 +49,7 @@ export default function RootLayout({
         {children}
   
         {/* Conditionally render Navigation, CVLink, and Navbar after page load */}
-        {isPageLoaded && !pathname.startsWith('/my-projects') && (
+        {isPageLoaded && !pathname.startsWith('/my-projects/') && (
           <div className={pathname === '/' && width >= 768 ? "move-right" : ''}>
             <Navbar />
             <Navigation />

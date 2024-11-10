@@ -35,18 +35,20 @@ const ProjPage: React.FC = () => {
           className="projects-bottom w-full overflow-y-scroll mx-20 pb-0" 
           style={{ maxHeight: 'calc(100vh)' }}
         >
-          <button 
-            onClick={() => router.back()} 
-            className="absolute left-10 top-11 text-white hover:text-gray-300 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110"
-            aria-label="Go back to the previous page"
-          >
-            <AiOutlineLeft size={14} />
-            <span className="text-lg">Back</span>
-          </button>
+          
           <header className="title-bg relative font-bold text-center mt-14 mx-auto p-2 rounded-lg shadow-md flex bg-[#2d2d2d] text-white w-[75%] items-center justify-center">
             
             <h1 className='project-title text-2xl'>{projectByUrl.title}</h1>
           </header>
+
+          <button 
+            onClick={() => router.back()} 
+            className="button-back absolute left-5 md:left-5 lg:left-11 top-7 md:top-11 z-0 text-white bg-[#282828] rounded-lg md:bg-inherit hover:text-gray-300 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110"
+            aria-label="Go back to the previous page"
+          >
+        <AiOutlineLeft className="button-texture bg-none md:bg-white text-[20px] md:text-[14px] lg:text-[15px]" />
+            <span className="text-lg">Back</span>
+          </button>
 
           {/* Main Project Image */}
           <div className="project-image relative rounded-2xl overflow-hidden w-[75%] mx-auto mt-5" >
@@ -174,6 +176,18 @@ const ProjPage: React.FC = () => {
             margin-top: 2vh;
             width: 80%;
           }
+          .button-back {
+            
+           
+          }
+
+          .button-back span {
+            display: none; /* Hide text on small screens */
+          }
+          
+          .button-texture {
+            background-color: black;
+          }
         }
 
         @media (max-width: 500px) {
@@ -236,6 +250,7 @@ const ProjPage: React.FC = () => {
           
             
           }
+          
         }
       `}</style>
     </div>
