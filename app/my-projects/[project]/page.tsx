@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Projects } from "@/constants";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ProjectCardProps } from '@/components/ProjectCard';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 const ProjPage: React.FC = () => {
+  const router = useRouter(); // Initialize the useRouter hook
   const params = usePathname().split('/')[2];
   const [projectByUrl, setProject] = useState<ProjectCardProps | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true); // Loading state
@@ -23,6 +25,8 @@ const ProjPage: React.FC = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
+
+        
       
       {loading ? (
         <span className="text-gray-200">Loading...</span> // Loading indicator
@@ -31,7 +35,16 @@ const ProjPage: React.FC = () => {
           className="projects-bottom w-full overflow-y-scroll mx-20 pb-0" 
           style={{ maxHeight: 'calc(100vh)' }}
         >
+          <button 
+            onClick={() => router.back()} 
+            className="absolute left-10 top-11 text-white hover:text-gray-300 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110"
+            aria-label="Go back to the previous page"
+          >
+            <AiOutlineLeft size={14} />
+            <span className="text-lg">Back</span>
+          </button>
           <header className="title-bg relative font-bold text-center mt-14 mx-auto p-2 rounded-lg shadow-md flex bg-[#2d2d2d] text-white w-[75%] items-center justify-center">
+            
             <h1 className='project-title text-2xl'>{projectByUrl.title}</h1>
           </header>
 

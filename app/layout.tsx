@@ -45,23 +45,23 @@ export default function RootLayout({
       <body className="font-project">
         {/* Show loading indicator while the page is loading */}
         {!isPageLoaded && <LoadingIndicator />}
-
+  
         {children}
-
+  
         {/* Conditionally render Navigation, CVLink, and Navbar after page load */}
-        {isPageLoaded && (
-          <>
-          <div className={pathname === '/' && width >= 768 ? "move-right" : ''}><Navbar /><Navigation />
-          <CVLink /></div>
- 
-            
-            {/* Render SplineComponent only on the homepage */}
-            {pathname === '/' && <SplineComponent />}
-            
-            {pathname === '/' && <Transition />}
-          </>
+        {isPageLoaded && !pathname.startsWith('/my-projects') && (
+          <div className={pathname === '/' && width >= 768 ? "move-right" : ''}>
+            <Navbar />
+            <Navigation />
+            <CVLink />
+          </div>
         )}
+        
+        {/* Render SplineComponent and Transition only on the homepage */}
+        {pathname === '/' && <SplineComponent />}
+        {pathname === '/' && <Transition />}
       </body>
     </html>
   );
-}
+  
+}  
