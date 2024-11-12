@@ -1,100 +1,35 @@
-// app/page.tsx
+"use client"; // Add this directive at the top
 
-import React from 'react';
-import Image from 'next/image'; 
-
+import React, { useState, useEffect } from 'react';
+import LoadingIndicator from "@/components/LoadingIndicator"; // Import your LoadingIndicator component
 
 export default function Home() {
- 
-    const content = [
-        { 
-          text: "Here is my projects", 
-          img: "/flecha.svg", 
-          style: { 
-            height: '30vh', 
-            marginLeft: '0.5vw', 
-            color: 'white', 
-            imgMarginTop: '19vh', 
-            imgMarginBottom: '0vh', 
-            textMarginTop: '2.5vh', 
-            textMarginBottom: '1.5vh',
-          }
-        },
-        { 
-          text: "Download my CV", 
-          img: "/equal.svg", 
-          style: { 
-            height: '25vh', 
-            marginLeft: '0.5vw', 
-            color: 'white', 
-            imgMarginTop: '15.5vh', 
-            imgMarginBottom: '0vh', 
-            textMarginTop: '2.5vh', 
-            textMarginBottom: '6vh'
-          }
-        },
-        { 
-          text: "My Social Network", 
-          img: "/brack.svg", 
-          style: { 
-            height: '45vh', 
-            marginLeft: '-0.3vw', 
-            color: 'white', 
-            imgMarginTop: '5vh', 
-            imgMarginBottom: '0vh', 
-            textMarginTop: '9vh', 
-            textMarginBottom: '5.5vh'
-          }
-        },
-        
-    ];
+  const [loading, setLoading] = useState(true); // Track loading state
 
-    return (
-        <main className="w-screen h-screen flex items-start p-8 relative"
+  useEffect(() => {
+    // Set the loading state to false after the component mounts
+    setLoading(false);
+  }, []); // This effect runs once when the component mounts
+
+  return (
+    <main
+      className="w-screen h-screen flex items-start p-0 relative"
       style={{
-        backgroundImage: 'url(/bg/bg_home.jpg)', 
+        backgroundImage: 'url(/bg/bg_home.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-      }}>
-      <div className="text-with-image extra-margin z-10 ">
-        {content.map((item, index) => (
-          <div 
-            key={index} 
-            className="md:flex hidden items-center " 
-            style={{ 
-              marginTop: item.style.imgMarginTop, 
-              marginBottom: item.style.imgMarginBottom 
-            }}
-          >
-            <span 
-              className="static-text mr-3" 
-              style={{ 
-                color: item.style.color, 
-                fontSize: '14px', 
-                marginTop: item.style.textMarginTop, 
-                marginBottom: item.style.textMarginBottom 
-              }}
-            >
-              {item.text}
-            </span>
-            {item.img && (
-              <Image
-                src={item.img}
-                alt="Decorative Shape"
-                height={parseInt(item.style.height)} 
-                width={parseInt(item.style.height)} 
-                style={{ marginLeft: item.style.marginLeft }}
-              />
-            )}
-            
-          </div>
-        ))}
-      </div>
-
-            
-                
-           
-        </main>
-    );
+      }}
+    >
+      {/* Show loading indicator until the page is fully loaded */}
+      {loading ? (
+        <div className="flex items-center justify-center h-full w-full z-10">
+          <LoadingIndicator /> {/* Custom loading indicator */}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center z-10 w-full h-full">
+          {/* Add your content here */}
+        </div>
+      )}
+    </main>
+  );
 }
-

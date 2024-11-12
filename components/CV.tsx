@@ -55,7 +55,7 @@ const Cvs = () => {
                 }
 
                 .cv-button:hover {
-                    transform: scale(1.35); /* Apply a larger hover scale */
+                    transform: scale(1.25); /* Apply a larger hover scale */
                     background-color: #303030; /* Color transition */
                     color: #dcb800;
                 }

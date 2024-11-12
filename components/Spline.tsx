@@ -1,12 +1,18 @@
-// components/SplineComponent.tsx
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 
 const SplineComponent = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Set the component to visible once it's mounted
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className="spline-container">
+    <div className={`spline-container ${isVisible ? 'fade-in' : ''}`}>
       <Spline scene="https://prod.spline.design/CfOZ1jFgB6lKaC4a/scene.splinecode" />
       
       <style jsx>{`
@@ -17,7 +23,15 @@ const SplineComponent = () => {
           left: 50vh;
           width: 95%;
           height: 95%;
-          transition: all 0.3s ease;
+          opacity: 0; /* Initially invisible */
+          transform: scale(0.8); /* Slightly scaled down */
+          transition: all 2s ease-in-out; /* Smooth transition */
+        }
+
+        /* Animation class for fading in and scaling up */
+        .fade-in {
+          opacity: 1;
+          transform: scale(1); /* Scale to normal size */
         }
 
         @media (max-width: 1050px) {

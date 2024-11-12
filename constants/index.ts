@@ -1,4 +1,5 @@
-import { RxHome, RxPerson, RxDashboard, RxClipboard } from "react-icons/rx";
+import { title } from "process";
+import { RxHome, RxPerson, RxDashboard, RxClipboard, RxPinBottom } from "react-icons/rx";
 
 export const SkillData = [
   {
@@ -134,22 +135,33 @@ export const NavLinks = [
   {
     name: "/",
     icon: RxHome,
+    title: "Home",
     link: "/",
   },
   {
     name: "/my-skills",
     icon: RxPerson,
+    title: "My skills",
     link: "/my-skills",
   },
   {
     name: "/my-projects",
     icon: RxDashboard,
+    title: "My Projects",
     link: "/my-projects",
   },
   {
     name: "/contact-me",
     icon: RxClipboard,
+    title: "Contact me",
     link: "/contact-me",
+  },
+  {
+    name: "CV",
+    icon: RxPinBottom,
+    link: "/",
+    title: "Download my CV",
+    href: "/CV_Oscar_Hernandez.pdf"
   },
 ];
 

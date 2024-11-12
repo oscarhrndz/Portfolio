@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
   return (
     <Link href={`my-projects/${url}`}>
       <div
-        className="group project-card rounded-lg shadow-md overflow-hidden bg-[#1a1a1a] w-[36vw] h-[65vh] flex flex-col transition-transform duration-300 transform hover:scale-105 hover:bg-[#282828]"
+        className="group project-card rounded-lg shadow-md overflow-hidden bg-[#1a1a1a] w-[36vw] h-[65vh] flex flex-col transition-transform duration-300 transform hover:scale-105 hover:bg-[#282828] animate-card"
       >
         {/* Set a fixed height for the image */}
         <Image 
@@ -62,12 +62,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, text, src, url, tech }
       </div>
 
       <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-card {
+          animation: fadeInUp 0.6s ease-out;
+        }
+
         @media (max-width: 900px) {
+          .project-card {
+            width: 60vw;
+            margin: 0 auto;
+          }
+        }
+
+        @media (max-width: 768px) {
           .project-card {
             width: 80vw;
             margin: 0 auto;
           }
         }
+
         @media (max-width: 550px) {
           .tech-logos {
             display: none;

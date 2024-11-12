@@ -1,41 +1,54 @@
-"use client";
+"use client"; // Add this directive at the top
 
 import { Projects } from '@/constants';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import ProjectCard from '@/components/ProjectCard';
+import LoadingIndicator from '@/components/LoadingIndicator';
 
 const Page: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [isPageLoaded, setIsPageLoaded] = useState(false); // Track page load state
 
-  useEffect(() => {
-    // Simulate loading delay, or you could set loading to false after fetching data
-    setLoading(false);
+  useLayoutEffect(() => {
+    const handleLoad = () => setIsPageLoaded(true);
+
+    // Check if the document is already loaded
+    if (document.readyState === "complete") {
+      setIsPageLoaded(true);
+    } else {
+      // Otherwise, add the load event listener
+      window.addEventListener("load", handleLoad);
+    }
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   return (
     <div
-      className='w-screen h-screen flex items-center justify-center'
+      className="w-screen h-screen flex items-center justify-center"
       style={{
         backgroundImage: 'url(/bg/bg_my_projects.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        paddingLeft: '2vw'
+        paddingLeft: '2vw',
       }}
     >
-      {loading ? (
-        // Loading indicator
-        <div className="flex items-center justify-center h-full">
-          <div className="loader">Loading...</div> {/* Replace this with your LoadingIndicator component */}
+      {/* Show loading indicator until page is fully loaded */}
+      {!isPageLoaded && (
+        <div className="loading">
+          <LoadingIndicator /> {/* Use the LoadingIndicator component */}
         </div>
-      ) : (
-        <div className='w-full h-full overflow-y-auto'> 
-          {/* Inner content container for project cards */}
-          <div className='space-bottom pt-14 pb-4'>
-            <div className='flex flex-col gap-14'>
+      )}
+
+      {/* Main content with project cards, rendered only after page load */}
+      {isPageLoaded && (
+        <div className="responsive-cards w-full h-full overflow-y-auto pl-36 translate-y-0">
+          <div className="space-bottom pt-14 pb-4">
+            <div className="flex flex-col gap-14">
               {Projects.reduce((acc: JSX.Element[], project, index) => {
                 if (index % 2 === 0) {
                   acc.push(
-                    <div key={index} className='flex justify-center gap-12 mb-10'>
+                    <div key={index} className="flex justify-center gap-12 mb-10">
                       <ProjectCard 
                         title={project.title}
                         text={project.text}
@@ -62,7 +75,7 @@ const Page: React.FC = () => {
                           figma_url={Projects[index + 1].figma_url}
                         />
                       ) : (
-                        <div style={{ marginLeft: '36vw'}} /> // Add empty div to keep alignment
+                        <div style={{ marginLeft: '36vw' }} /> // Add empty div to keep alignment
                       )}
                     </div>
                   );
@@ -73,9 +86,35 @@ const Page: React.FC = () => {
           </div>
         </div>
       )}
-      
+
       <style jsx>{`
+        /* The loading class for the loading screen */
+        .loading {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+          color: white;
+          font-size: 2rem;
+          font-weight: bold;
+          z-index: 10; /* Ensure it stays above all other content */
+        }
+
+        @media (max-width: 1200px) {
+          .responsive-cards{
+            padding-left: 20vw;
+          }
+        }
+
         @media (max-width: 900px) {
+          .responsive-cards{
+            padding-left: 30vw;
+          }
           .flex {
             flex-direction: column; // Stack cards vertically on small screens
             align-items: center; // Center cards
@@ -91,9 +130,15 @@ const Page: React.FC = () => {
             padding-bottom: 20vh;
           }
         }
+
+        @media (max-width: 768px) {
+          .responsive-cards{
+            padding-left: 0vw;
+          }
+        }
       `}</style>
     </div>
   );
-}
+};
 
 export default Page;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
@@ -10,6 +10,7 @@ const ContactForm = () => {
     message: '',
   });
   const [successMessage, setSuccessMessage] = useState('');
+  const [isVisible, setIsVisible] = useState(false);  // Track visibility for animation
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -33,9 +34,16 @@ const ContactForm = () => {
     });
   };
 
+  useEffect(() => {
+    // Trigger the animation after the component is mounted (for page load and navigation)
+    setIsVisible(true);
+  }, []);
+
   return (
     <div
-      className="form-complete p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full mx-auto -mt-0 lg:mt-5 ml-5"
+      className={`form-complete p-6 rounded-xl shadow-lg flex flex-col lg:flex-row justify-between items-start w-full mx-auto -mt-0 lg:mt-5 pl-40 transition-all duration-700 ease-in-out ${
+        isVisible ? 'fade-slide-in' : 'opacity-0 translate-y-10'
+      }`}
       style={{
         background: 'rgba(0, 0, 0, 0.4)',
         minHeight: '90vh',
@@ -45,7 +53,6 @@ const ContactForm = () => {
         msOverflowStyle: 'none', // IE and Edge
         WebkitOverflowScrolling: 'touch', // For smooth scrolling on iOS
       }}
-      // Hide scrollbar for Webkit browsers
       onWheel={(e) => {
         e.currentTarget.scrollBy({
           top: e.deltaY,
@@ -120,11 +127,12 @@ const ContactForm = () => {
           <p className="data-contact text-lg font-semibold border-b border-gray-400 pb-1">+34 646041002</p>
         </div>
       </div>
+
       <style jsx>{`
         @media (max-width: 1024px) {
           .form-complete {
             margin-top: 0vh;
-            margin-left: 0vh;
+            padding-left: 25vh;
           }
           .title-form {
             font-size: 1.3rem;
@@ -157,6 +165,24 @@ const ContactForm = () => {
             padding-bottom: 0rem;
           }
         }
+
+        /* Animation classes */
+        .fade-slide-in {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+        }
+
+        .opacity-0 {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+      @media (max-width: 1024px) {
+        .form-complete {
+          margin-top: 0vh;
+          padding-left: 0vh;
+        }
+      }
       `}</style>
     </div>
   );

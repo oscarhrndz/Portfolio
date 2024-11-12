@@ -1,10 +1,12 @@
-"use client";
+"use client"; // Add this directive at the top
+
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { SkillData } from "@/constants";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
+import LoadingIndicator from "@/components/LoadingIndicator"; // Importing the LoadingIndicator component
 
 interface Skill {
   name: string;
@@ -22,10 +24,12 @@ const shuffleArray = (array: Skill[]): Skill[] => {
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
+
   const shuffledSkills1 = shuffleArray([...SkillData]);
   const shuffledSkills2 = shuffleArray([...SkillData]);
 
   useEffect(() => {
+    // Simulate the loading state change after the component has mounted
     setLoading(false);
   }, []);
 
@@ -41,14 +45,15 @@ const Page = () => {
       {/* Dark overlay to decrease brightness */}
       <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
 
+      {/* Show the loading screen while the page is loading */}
       {loading ? (
         <div className="flex items-center justify-center h-full z-10">
-          <div className="loader">Loading...</div>
+          <LoadingIndicator /> {/* You can use your custom loading indicator */}
         </div>
       ) : (
-        <div className="flex flex-col gap-28 max-w-[80%] text-center items-center z-10">
-          <div className="flex flex-col items-center gap-4 pt-5">
-            <h1 className="font-semibold text-white text-[50px]">
+        <div className="flex flex-col gap-28 max-w-[80%] text-center items-center z-10 fade-in">
+          <div className="flex flex-col items-center gap-4 pt-5 fade-in">
+            <h1 className="font-semibold text-white text-[50px] fade-in">
               Skills{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
                 {" "}
@@ -58,6 +63,7 @@ const Page = () => {
             </h1>
           </div>
 
+          {/* First Swiper */}
           <Swiper
             slidesPerView={5}
             loop={true}
@@ -67,11 +73,11 @@ const Page = () => {
             }}
             speed={5000}
             modules={[Autoplay]}
-            className="width-logos max-w-[80%]"
+            className="width-logos max-w-[80%] fade-in"
             spaceBetween={3}
           >
             {shuffledSkills1.map((skill: Skill, index: number) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="fade-in">
                 <Image
                   src={skill.Image}
                   alt={skill.name}
@@ -82,6 +88,7 @@ const Page = () => {
             ))}
           </Swiper>
 
+          {/* Second Swiper */}
           <Swiper
             slidesPerView={5}
             loop={true}
@@ -92,11 +99,11 @@ const Page = () => {
             }}
             speed={5000}
             modules={[Autoplay]}
-            className="width-logos max-w-[80%]"
+            className="width-logos max-w-[80%] fade-in"
             spaceBetween={3}
           >
             {shuffledSkills2.map((skill: Skill, index: number) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="fade-in">
                 <Image
                   src={skill.Image}
                   alt={skill.name}
