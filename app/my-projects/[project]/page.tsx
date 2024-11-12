@@ -43,12 +43,12 @@ const ProjPage: React.FC = () => {
           {/* Back Button with Delay */}
           <button 
             onClick={() => router.back()} 
-            className="button-back absolute left-5 md:left-5 lg:left-11 top-7 sm:top-14 z-0 text-white bg-[#282828] rounded-lg md:bg-inherit hover:text-gray-200 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110 slide-in"
+            className="button-back absolute left-5 md:left-5 lg:left-11 top-7 lg:top-14 z-0 text-white bg-[#282828] rounded-lg md:bg-inherit hover:text-gray-200 p-2 flex items-center space-x-2 transform transition-transform duration-300 hover:scale-110 slide-in"
             aria-label="Go back to the previous page"
             style={{ animationDelay: '1s' }} // Added delay
           >
             <AiOutlineLeft className="button-texture bg-none md:bg-white text-white hover:text-white text-[20px] md:text-[14px] lg:text-[15px]" />
-            <span className="text-lg">Back</span>
+            <span className="button-text text-lg">Back</span>
           </button>
 
           {/* Main Project Image */}
