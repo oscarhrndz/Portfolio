@@ -63,7 +63,7 @@ const ContactForm = () => {
     >
       <form onSubmit={sendEmail} className="w-full lg:w-[45%] mb-8 lg:mb-0">
         <h1 className="title-form text-3xl mb-5 text-gray-50 font-bold">
-          LET&apos;S <span className="text-3xl font-bold text-purple-800">CONNECT</span> AND <span className="text-3xl font-bold text-purple-800">WORK</span> TOGETHER
+          LET&apos;S <span className="text-3xl font-bold text-[#0ABAB5]">CONNECT</span> AND <span className="text-3xl font-bold text-[#0ABAB5]">WORK</span> TOGETHER
         </h1>
         <div className="mb-4">
           <input

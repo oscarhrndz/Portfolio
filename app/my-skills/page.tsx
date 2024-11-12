@@ -55,7 +55,7 @@ const Page = () => {
           <div className="flex flex-col items-center gap-4 pt-5 fade-in">
             <h1 className="font-semibold text-white text-[50px] fade-in">
               Skills{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ABAB5] to-[#25eb85]">
                 {" "}
                 &{" "}
               </span>

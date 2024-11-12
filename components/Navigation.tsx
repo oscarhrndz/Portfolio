@@ -49,7 +49,7 @@ const Navigation = () => {
                     <span
                       className={`inline-block transition-transform duration-300 ${
                         path === nav.link || (path === '/' && nav.link === '/')
-                          ? "text-purple-800 scale-110"
+                          ? "text-[#0ABAB5] scale-110 font-bold "
                           : "text-white hover:text-gray-400 hover:scale-125"
                       }`}
                     >
