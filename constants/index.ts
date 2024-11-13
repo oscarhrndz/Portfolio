@@ -32,74 +32,74 @@ export const PoweredLogos = [
 export const SkillData = [
   {
     name: "Java",
-    Image: "/java.png",
+    Image: "/logos/java.png",
     width: 80,
     height: 80,
   },
   {
     name: "Kotlin",
-    Image: "/kotlin.png",
+    Image: "/logos/kotlin.png",
     width: 80,
     height: 80,
   },
   {
     name: "Dart",
-    Image: "/dart.png",
+    Image: "/logos/dart.png",
     width: 65,
     height: 65,
   },
   {
     name: "Flutter",
-    Image: "/flutter.png",
+    Image: "/logos/flutter.png",
     width: 80,
     height: 80,
   },
   {
     name: "React Native",
-    Image: "/react_native.png",
+    Image: "/logos/react_native.png",
     width: 80,
     height: 80,
   },
   {
     name: "MySQL",
-    Image: "/mysql.png",
+    Image: "/logos/mysql.png",
     width: 80,
     height: 80,
   },
 
   {
     name: "Firebase",
-    Image: "/firebase.png",
+    Image: "/logos/firebase.png",
     width: 80,
     height: 80,
   },
   {
     name: "Android",
-    Image: "/android.png",
+    Image: "/logos/android.png",
     width: 80,
     height: 80,
   },
   {
     name: "IOS",
-    Image: "/apple.png",
+    Image: "/logos/apple.png",
     width: 80,
     height: 80,
   },
   {
     name: "TypeScript",
-    Image: "/ts.png",
+    Image: "/logos/ts.png",
     width: 80,
     height: 80,
   },
   {
     name: "Figma",
-    Image: "/figma.png",
+    Image: "/logos/figma.png",
     width: 80,
     height: 80,
   },
   {
     name: "Git",
-    Image: "/git.png",
+    Image: "/logos/git.png",
     width: 80,
     height: 80,
   },
@@ -108,23 +108,23 @@ export const SkillData = [
 export const Socials = [
   {
     name: "Github",
-    src: "/gatuli.svg",
+    src: "/socials/github.svg",
     link: "https://github.com/oscarhrndz",
   },
   {
     name: "Telegram",
-    src: "/telegram.svg",
+    src: "/socials/telegram.svg",
     link: "https://t.me/oscarhrndez",
   },
   {
     name: "LinkedIn",
-    src: "/linkedin.svg",
+    src: "/socials/linkedin.svg",
     link: "https://www.linkedin.com/in/oscarhrndez/",
   },
 
   {
     name: "Email",
-    src: "/email-envelope.svg",
+    src: "/socials/email.svg",
     link: "mailto:your-oscarhernandezsoler@gmail.com?subject=Subject%20Here&body=Body%20Here",
   },
 ];
@@ -136,7 +136,7 @@ export const Projects = [
     src: "/supermarket/bg.png",
     url: "supermarket-shop-online",
     description: "Supermarket Online Shop is an application for Supermarket Users. In this application, users can check the products and their prices. Moreover, they can check their location and similar products",
-    tech: ['/java.png','/firebase.png','/android.png'],
+    tech: ['/logos/java.png','/logos/firebase.png','/logos/android.png'],
     figma_image: '/supermarket/figma.png',
     figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=0-1',
     mockups:["/supermarket/mockup1.png","/supermarket/mockup2.png","/supermarket/mockup3.png"],
@@ -149,7 +149,7 @@ export const Projects = [
     src: "/rentalcar/showcase.png",
     url: "rental-car",
     description: "The Rental Car application is designed to simplify the process of renting cars. Users can easily browse and compare various car models based on important details such as price, mileage, features, and specifications. Additionally, the application provides information about the car's owner and its location.",
-    tech: ['/dart.png','/flutter.png','/firebase.png', '/android.png', '/apple.png'],
+    tech: ['/logos/dart.png','/logos/flutter.png','/logos/firebase.png', '/logos/android.png', '/logos/apple.png'],
     figma_image: '/rentalcar/figma.png',
     figma_url: 'https://www.figma.com/design/rGAsTki7ZUnGgSNEBKQyJY/Portfolio-Figma?node-id=16-2',
     mockups:["/rentalcar/mockup1.png","/rentalcar/mockup2.png","/rentalcar/mockup3.png","/rentalcar/mockup4.png"],
@@ -191,14 +191,4 @@ export const NavLinks = [
     title: "Download my CV",
     href: "/CV_Oscar_Hernandez.pdf"
   },
-];
-
-export const CV = [
-  {
-    name: "CV",
-    icon: RxHome,
-    link: "/",
-    href: "/CV_Oscar_Hernandez.pdf"
-  },
-  
 ];

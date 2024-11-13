@@ -96,7 +96,7 @@ const ProjPage: React.FC = () => {
               >
                 <div className="github2 flex items-center">
                   <Image 
-                    src="/github-mark-white.svg" 
+                    src="/github.svg" 
                     alt="GitHub repository"
                     className="github-image w-9 h-9 mr-3 transition-colors duration-300 group-hover:filter group-hover:invert" 
                     width={132}
@@ -118,7 +118,7 @@ const ProjPage: React.FC = () => {
             >
               <div className="flex items-center mb-2">
                 <Image 
-                  src="/figma.png" 
+                  src="/logos/figma.png" 
                   alt="Figma logo"
                   className="figma-logo w-5 h-5 mr-2"
                   width={20}
