@@ -1,6 +1,34 @@
 import { title } from "process";
 import { RxHome, RxPerson, RxDashboard, RxClipboard, RxPinBottom } from "react-icons/rx";
 
+export const PoweredLogos = [
+  {
+    name: 'react',
+    src: '/powered/react.svg',
+
+  },
+  {
+    name: 'next.js',
+    src: '/powered/nextjs.svg',
+
+  },
+  {
+    name: 'typescript',
+    src: '/powered/typescript.svg',
+
+  },
+  {
+    name: 'javascript',
+    src: '/powered/javascript.svg',
+
+  },
+  {
+    name: 'tailwind css',
+    src: '/powered/tailwind-css.svg',
+
+  },
+]
+
 export const SkillData = [
   {
     name: "Java",

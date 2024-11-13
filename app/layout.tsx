@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import LoadingIndicator from '@/components/LoadingIndicator'; // Import the loading indicator
 import useDeviceSize from "./hook";
 import { motion } from "framer-motion";  // Import framer-motion for animation
+import PoweredPopup from '@/components/PoweredPopup';
 
 export default function RootLayout({
   children,
@@ -55,6 +56,7 @@ export default function RootLayout({
         )}
 
         {pathname === '/' && <SplineComponent />}
+        {pathname === '/' && <PoweredPopup />}
         
       </body>
     </html>
